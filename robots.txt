@@ -1,0 +1,85 @@
+# Robots.txt for Digital Marketing Agency Website
+# Allow all search engines to crawl the entire site
+
+User-agent: *
+Allow: /
+
+# Block access to admin and private folders
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /backup/
+
+# Block access to certain file types
+Disallow: *.pdf$
+Disallow: *.doc$
+Disallow: *.docx$
+Disallow: *.zip$
+
+# Allow access to CSS and JS files for proper rendering
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Block search engines from indexing search results and form handlers
+Disallow: /search
+Disallow: /form-handler
+Disallow: /contact-form
+Disallow: /newsletter-signup
+
+# Sitemap location
+Sitemap: https://yourwebsite.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1
+
+# Specific rules for major search engines
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots and scrapers
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Block social media bots from certain areas
+User-agent: facebookexternalhit
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Twitterbot
+Disallow: /admin/
+Disallow: /private/
+
+# Instructions for crawling images
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Disallow: /admin/
+Disallow: /private/
+
+# Instructions for crawling videos (if you add video content)
+User-agent: Googlebot-Video
+Allow: /assets/videos/
+Disallow: /admin/
+Disallow: /private/

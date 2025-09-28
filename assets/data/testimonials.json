@@ -1,0 +1,158 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "John Smith",
+      "position": "CEO",
+      "company": "Tech Solutions Inc.",
+      "image": "assets/images/testimonials/client-1.webp",
+      "rating": 5,
+      "text": "DigitalPro transformed our online presence completely. Our website traffic increased by 400% and leads by 250% in just 6 months! Their SEO strategies are simply outstanding.",
+      "service": "SEO",
+      "results": {
+        "traffic_increase": "400%",
+        "leads_increase": "250%",
+        "timeline": "6 months"
+      },
+      "featured": true,
+      "date": "2024-12-15"
+    },
+    {
+      "id": 2,
+      "name": "Sarah Johnson",
+      "position": "Marketing Director",
+      "company": "Fashion Hub",
+      "image": "assets/images/testimonials/client-2.webp",
+      "rating": 5,
+      "text": "The best investment we made for our business. Their PPC campaigns generated 5x ROI consistently. The team is professional, responsive, and delivers results. Highly recommended!",
+      "service": "PPC",
+      "results": {
+        "roi": "5x",
+        "revenue_increase": "300%",
+        "cost_reduction": "40%"
+      },
+      "featured": true,
+      "date": "2024-11-28"
+    },
+    {
+      "id": 3,
+      "name": "Dr. Michael Chen",
+      "position": "Owner",
+      "company": "MedCare Dental Practice",
+      "image": "assets/images/testimonials/client-3.webp",
+      "rating": 5,
+      "text": "Outstanding results! We went from struggling to get appointments to being fully booked with a waiting list. Their local SEO and Google Ads management is exceptional.",
+      "service": "Local SEO + PPC",
+      "results": {
+        "appointments_increase": "800%",
+        "local_ranking": "#1",
+        "booking_rate": "95%"
+      },
+      "featured": true,
+      "date": "2024-10-22"
+    },
+    {
+      "id": 4,
+      "name": "Jennifer Adams",
+      "position": "Founder",
+      "company": "Elite Properties Group",
+      "image": "assets/images/team/team-placeholder.webp",
+      "rating": 5,
+      "text": "Our social media presence went from zero to industry leader. The content strategy and social media management increased our qualified leads by 200%. Amazing work!",
+      "service": "Social Media Marketing",
+      "results": {
+        "followers_growth": "50000+",
+        "engagement_rate": "500%",
+        "leads_increase": "200%"
+      },
+      "featured": false,
+      "date": "2024-09-18"
+    },
+    {
+      "id": 5,
+      "name": "Alex Rodriguez",
+      "position": "CEO",
+      "company": "TechFlow SaaS",
+      "image": "assets/images/team/team-placeholder.webp",
+      "rating": 5,
+      "text": "From startup to industry leader in 12 months! DigitalPro's comprehensive digital marketing strategy helped us achieve 1000% traffic growth and $2M in revenue.",
+      "service": "Full-Service Digital Marketing",
+      "results": {
+        "traffic_growth": "1000%",
+        "revenue": "$2M",
+        "roi": "15x"
+      },
+      "featured": false,
+      "date": "2024-08-30"
+    },
+    {
+      "id": 6,
+      "name": "Lisa Wang",
+      "position": "E-commerce Director",
+      "company": "Beauty Essentials",
+      "image": "assets/images/team/team-placeholder.webp",
+      "rating": 5,
+      "text": "Their e-commerce SEO strategy doubled our online sales within 4 months. The technical SEO improvements and content optimization were game-changers for our business.",
+      "service": "E-commerce SEO",
+      "results": {
+        "sales_increase": "200%",
+        "organic_traffic": "350%",
+        "conversion_rate": "45%"
+      },
+      "featured": false,
+      "date": "2024-07-14"
+    },
+    {
+      "id": 7,
+      "name": "David Martinez",
+      "position": "Operations Manager",
+      "company": "Green Energy Solutions",
+      "image": "assets/images/team/team-placeholder.webp",
+      "rating": 5,
+      "text": "Professional, reliable, and results-driven. Their content marketing strategy positioned us as industry thought leaders and generated 300% more qualified leads.",
+      "service": "Content Marketing",
+      "results": {
+        "brand_awareness": "400%",
+        "qualified_leads": "300%",
+        "industry_ranking": "Top 3"
+      },
+      "featured": false,
+      "date": "2024-06-25"
+    },
+    {
+      "id": 8,
+      "name": "Amanda Foster",
+      "position": "Marketing Manager",
+      "company": "Fitness First Gym",
+      "image": "assets/images/team/team-placeholder.webp",
+      "rating": 4,
+      "text": "Great team to work with! Their social media campaigns and local SEO helped us increase membership by 180%. Communication is excellent and results speak for themselves.",
+      "service": "Social Media + Local SEO",
+      "results": {
+        "membership_increase": "180%",
+        "local_visibility": "85%",
+        "social_engagement": "320%"
+      },
+      "featured": false,
+      "date": "2024-05-17"
+    }
+  ],
+  "summary": {
+    "total_clients": 500,
+    "average_rating": 4.9,
+    "total_testimonials": 8,
+    "featured_testimonials": 3,
+    "success_rate": "95%",
+    "average_roi": "6x",
+    "industries_served": [
+      "Technology",
+      "E-commerce",
+      "Healthcare",
+      "Real Estate",
+      "Fitness",
+      "Beauty",
+      "Energy",
+      "Fashion"
+    ]
+  }
+}

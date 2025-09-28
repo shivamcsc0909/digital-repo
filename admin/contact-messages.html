@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Messages - Manage customer inquiries and leads">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <title>Contact Messages - DigitalPro Agency</title>
+    
+    <!-- CSS Files -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet">
+    
+    <style>
+        .admin-sidebar {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .admin-sidebar .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-sidebar .nav-link:hover,
+        .admin-sidebar .nav-link.active {
+            color: white;
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .admin-content {
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+        
+        .admin-header {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 16px 0;
+        }
+        
+        .messages-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .message-item {
+            border-bottom: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .message-item:last-child {
+            border-bottom: none;
+        }
+        
+        .message-item:hover {
+            background: #f8fafc;
+        }
+        
+        .message-item.unread {
+            background: rgba(59, 130, 246, 0.05);
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .message-item.selected {
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        .message-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .message-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .priority-badge {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        
+        .priority-high {
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+        }
+        
+        .priority-medium {
+            background: rgba(245, 158, 11, 0.1);
+            color: #d97706;
+        }
+        
+        .priority-low {
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+        }
+        
+        .service-badge {
+            background: rgba(99, 102, 241, 0.1);
+            color: #6366f1;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .message-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .message-detail {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .contact-info {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .reply-form {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .filter-tabs {
+            background: white;
+            border-radius: 12px;
+            padding: 8px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .filter-tab {
+            border: none;
+            background: transparent;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        .filter-tab.active {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        
+        .stat-label {
+            color: #6b7280;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .search-filters {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 admin-sidebar p-3">
+                <div class="d-flex align-items-center mb-4">
+                    <h4 class="mb-0">
+                        <i class="fas fa-shield-alt me-2"></i>
+                        Admin Panel
+                    </h4>
+                </div>
+                
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="dashboard.html">
+                        <i class="fas fa-tachometer-alt me-2"></i>
+                        Dashboard
+                    </a>
+                    <a class="nav-link" href="blog-editor.html">
+                        <i class="fas fa-edit me-2"></i>
+                        Blog Editor
+                    </a>
+                    <a class="nav-link active" href="contact-messages.html">
+                        <i class="fas fa-envelope me-2"></i>
+                        Messages
+                        <span class="badge bg-danger ms-2" id="unreadCount">3</span>
+                    </a>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-file-alt me-2"></i>
+                        Content
+                    </a>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-chart-bar me-2"></i>
+                        Analytics
+                    </a>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-users me-2"></i>
+                        Users
+                    </a>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog me-2"></i>
+                        Settings
+                    </a>
+                    <hr class="my-3" style="border-color: rgba(255,255,255,0.2);">
+                    <a class="nav-link" href="../index.html">
+                        <i class="fas fa-arrow-left me-2"></i>
+                        Back to Website
+                    </a>
+                    <a class="nav-link text-danger" href="#" onclick="logout()">
+                        <i class="fas fa-sign-out-alt me-2"></i>
+                        Logout
+                    </a>
+                </nav>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10 admin-content p-0">
+                <!-- Header -->
+                <div class="admin-header">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h1 class="h3 mb-0">Contact Messages</h1>
+                                <p class="text-muted mb-0">Manage customer inquiries and leads</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <button class="btn btn-outline-primary" onclick="exportMessages()">
+                                    <i class="fas fa-download me-1"></i>
+                                    Export
+                                </button>
+                                <button class="btn btn-primary" onclick="markAllRead()">
+                                    <i class="fas fa-check-double me-1"></i>
+                                    Mark All Read
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Messages Content -->
+                <div class="container-fluid px-4 py-4">
+                    <!-- Stats Cards -->
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalMessages">127</div>
+                            <div class="stat-label">Total Messages</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="unreadMessages">3</div>
+                            <div class="stat-label">Unread</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="todayMessages">8</div>
+                            <div class="stat-label">Today</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="avgResponseTime">2.4h</div>
+                            <div class="stat-label">Avg Response</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Search and Filters -->
+                    <div class="search-filters">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="searchMessages" 
+                                           placeholder="Search messages..." oninput="filterMessages()">
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-select" id="serviceFilter" onchange="filterMessages()">
+                                    <option value="">All Services</option>
+                                    <option value="seo">SEO</option>
+                                    <option value="ppc">PPC</option>
+                                    <option value="social-media">Social Media</option>
+                                    <option value="web-development">Web Development</option>
+                                    <option value="consultation">Consultation</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-select" id="priorityFilter" onchange="filterMessages()">
+                                    <option value="">All Priority</option>
+                                    <option value="high">High</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="low">Low</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-select" id="statusFilter" onchange="filterMessages()">
+                                    <option value="">All Status</option>
+                                    <option value="unread">Unread</option>
+                                    <option value="read">Read</option>
+                                    <option value="replied">Replied</option>
+                                    <option value="archived">Archived</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-select" id="dateFilter" onchange="filterMessages()">
+                                    <option value="">All Time</option>
+                                    <option value="today">Today</option>
+                                    <option value="week">This Week</option>
+                                    <option value="month">This Month</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Filter Tabs -->
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" onclick="setFilter('all')">
+                            All <span class="badge bg-secondary ms-1">127</span>
+                        </button>
+                        <button class="filter-tab" onclick="setFilter('unread')">
+                            Unread <span class="badge bg-danger ms-1">3</span>
+                        </button>
+                        <button class="filter-tab" onclick="setFilter('today')">
+                            Today <span class="badge bg-primary ms-1">8</span>
+                        </button>
+                        <button class="filter-tab" onclick="setFilter('high')">
+                            High Priority <span class="badge bg-warning ms-1">5</span>
+                        </button>
+                        <button class="filter-tab" onclick="setFilter('archived')">
+                            Archived <span class="badge bg-secondary ms-1">12</span>
+                        </button>
+                    </div>
+                    
+                    <div class="row">
+                        <!-- Messages List -->
+                        <div class="col-lg-5">
+                            <div class="messages-container">
+                                <div class="p-3 border-bottom">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h6 class="mb-0">Messages</h6>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-sm btn-outline-secondary" onclick="refreshMessages()">
+                                                <i class="fas fa-sync-alt"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary" onclick="selectAll()">
+                                                <i class="fas fa-check-square"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div id="messagesList">
+                                    <!-- Messages will be loaded here -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Message Detail -->
+                        <div class="col-lg-7">
+                            <div id="messageDetail" class="message-detail" style="display: none;">
+                                <!-- Message detail will be loaded here -->
+                            </div>
+                            
+                            <div id="noSelection" class="message-detail text-center">
+                                <i class="fas fa-envelope-open fa-4x text-muted mb-3"></i>
+                                <h5 class="text-muted">Select a message to view details</h5>
+                                <p class="text-muted">Choose a message from the list to read and respond</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reply Modal -->
+    <div class="modal fade" id="replyModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reply to Message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="replyForm">
+                        <div class="mb-3">
+                            <label for="replyTo" class="form-label">To:</label>
+                            <input type="email" class="form-control" id="replyTo" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="replySubject" class="form-label">Subject:</label>
+                            <input type="text" class="form-control" id="replySubject">
+                        </div>
+                        <div class="mb-3">
+                            <label for="replyMessage" class="form-label">Message:</label>
+                            <textarea class="form-control" id="replyMessage" rows="8" 
+                                      placeholder="Type your reply..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="markAsReplied">
+                                <label class="form-check-label" for="markAsReplied">
+                                    Mark as replied after sending
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="sendReply()">
+                        <i class="fas fa-paper-plane me-1"></i>
+                        Send Reply
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        let messages = [];
+        let filteredMessages = [];
+        let selectedMessage = null;
+        let currentFilter = 'all';
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadMessages();
+            startAutoRefresh();
+        });
+        
+        // Load messages (mock data)
+        function loadMessages() {
+            messages = [
+                {
+                    id: 1,
+                    name: 'John Smith',
+                    email: 'john@techcorp.com',
+                    phone: '+1-555-0123',
+                    company: 'TechCorp Inc.',
+                    website: 'https://techcorp.com',
+                    service: 'seo',
+                    budget: '5000-10000',
+                    subject: 'SEO Services Inquiry',
+                    message: 'Hi, we are looking for comprehensive SEO services for our technology company. We have a website with about 500 pages and need to improve our organic search rankings. Could you provide a quote and timeline?',
+                    date: new Date('2025-01-16T10:30:00'),
+                    status: 'unread',
+                    priority: 'high',
+                    source: 'website',
+                    ipAddress: '192.168.1.1',
+                    userAgent: 'Mozilla/5.0...',
+                    isRead: false,
+                    isReplied: false,
+                    isArchived: false
+                },
+                {
+                    id: 2,
+                    name: 'Sarah Johnson',
+                    email: 'sarah@fashionhub.com',
+                    phone: '+1-555-0456',
+                    company: 'Fashion Hub',
+                    website: 'https://fashionhub.com',
+                    service: 'ppc',
+                    budget: '2500-5000',
+                    subject: 'PPC Campaign Management',
+                    message: 'We need help with our Google Ads campaigns. Our current ROAS is below 2.0 and we\'re looking for an agency that can optimize our campaigns and improve performance.',
+                    date: new Date('2025-01-16T09:15:00'),
+                    status: 'unread',
+                    priority: 'medium',
+                    source: 'website',
+                    ipAddress: '192.168.1.2',
+                    userAgent: 'Mozilla/5.0...',
+                    isRead: false,
+                    isReplied: false,
+                    isArchived: false
+                },
+                {
+                    id: 3,
+                    name: 'Mike Davis',
+                    email: 'mike@localrestaurant.com',
+                    phone: '+1-555-0789',
+                    company: 'Local Restaurant',
+                    website: '',
+                    service: 'social-media',
+                    budget: '1000-2500',
+                    subject: 'Social Media Marketing',
+                    message: 'We own a local restaurant and want to increase our social media presence. We need help with Instagram and Facebook marketing to attract more local customers.',
+                    date: new Date('2025-01-16T08:45:00'),
+                    status: 'unread',
+                    priority: 'low',
+                    source: 'website',
+                    ipAddress: '192.168.1.3',
+                    userAgent: 'Mozilla/5.0...',
+                    isRead: false,
+                    isReplied: false,
+                    isArchived: false
+                },
+                {
+                    id: 4,
+                    name: 'Emily Chen',
+                    email: 'emily@startupxyz.com',
+                    phone: '+1-555-0321',
+                    company: 'StartupXYZ',
+                    website: 'https://startupxyz.com',
+                    service: 'web-development',
+                    budget: '10000+',
+                    subject: 'Website Redesign Project',
+                    message: 'We need a complete website redesign for our SaaS startup. Looking for modern design, fast loading times, and conversion optimization.',
+                    date: new Date('2025-01-15T16:20:00'),
+                    status: 'read',
+                    priority: 'high',
+                    source: 'website',
+                    ipAddress: '192.168.1.4',
+                    userAgent: 'Mozilla/5.0...',
+                    isRead: true,
+                    isReplied: false,
+                    isArchived: false
+                },
+                {
+                    id: 5,
+                    name: 'David Wilson',
+                    email: 'david@consulting.com',
+                    phone: '+1-555-0654',
+                    company: 'Wilson Consulting',
+                    website: 'https://wilsonconsulting.com',
+                    service: 'consultation',
+                    budget: '500-1000',
+                    subject: 'Free Consultation Request',
+                    message: 'I would like to schedule a free consultation to discuss our digital marketing strategy. We are a B2B consulting firm looking to generate more leads online.',
+                    date: new Date('2025-01-15T14:10:00'),
+                    status: 'replied',
+                    priority: 'medium',
+                    source: 'website',
+                    ipAddress: '192.168.1.5',
+                    userAgent: 'Mozilla/5.0...',
+                    isRead: true,
+                    isReplied: true,
+                    isArchived: false
+                }
+            ];
+            
+            filteredMessages = [...messages];
+            renderMessages();
+            updateStats();
+        }
+        
+        // Render messages list
+        function renderMessages() {
+            const messagesList = document.getElementById('messagesList');
+            
+            if (filteredMessages.length === 0) {
+                messagesList.innerHTML = `
+                    <div class="p-4 text-center text-muted">
+                        <i class="fas fa-inbox fa-2x mb-2"></i>
+                        <p>No messages found</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            messagesList.innerHTML = filteredMessages.map(message => `
+                <div class="message-item ${message.isRead ? '' : 'unread'}" 
+                     onclick="selectMessage(${message.id})" data-message-id="${message.id}">
+                    <div class="p-3">
+                        <div class="message-header mb-2">
+                            <div class="flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-start mb-1">
+                                    <div class="fw-semibold">${message.name}</div>
+                                    <div class="message-actions">
+                                        <span class="priority-badge priority-${message.priority}">${message.priority}</span>
+                                        ${message.service ? `<span class="service-badge">${getServiceName(message.service)}</span>` : ''}
+                                    </div>
+                                </div>
+                                <div class="text-muted small mb-1">${message.email}</div>
+                                <div class="fw-medium mb-1">${message.subject}</div>
+                                <div class="text-muted small mb-2">${truncateText(message.message, 100)}</div>
+                                <div class="message-meta">
+                                    <span><i class="fas fa-clock me-1"></i>${formatDate(message.date)}</span>
+                                    ${message.company ? `<span><i class="fas fa-building me-1"></i>${message.company}</span>` : ''}
+                                    ${message.isReplied ? '<span class="text-success"><i class="fas fa-reply me-1"></i>Replied</span>' : ''}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Select message
+        function selectMessage(messageId) {
+            selectedMessage = messages.find(m => m.id === messageId);
+            if (!selectedMessage) return;
+            
+            // Mark as read
+            if (!selectedMessage.isRead) {
+                selectedMessage.isRead = true;
+                selectedMessage.status = 'read';
+                updateStats();
+                renderMessages();
+            }
+            
+            // Update UI
+            document.querySelectorAll('.message-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+            document.querySelector(`[data-message-id="${messageId}"]`).classList.add('selected');
+            
+            // Show message detail
+            document.getElementById('noSelection').style.display = 'none';
+            document.getElementById('messageDetail').style.display = 'block';
+            
+            renderMessageDetail();
+        }
+        
+        // Render message detail
+        function renderMessageDetail() {
+            if (!selectedMessage) return;
+            
+            const messageDetail = document.getElementById('messageDetail');
+            messageDetail.innerHTML = `
+                <div class="d-flex justify-content-between align-items-start mb-4">
+                    <div>
+                        <h4>${selectedMessage.subject}</h4>
+                        <div class="text-muted">
+                            ${formatFullDate(selectedMessage.date)} • 
+                            <span class="priority-badge priority-${selectedMessage.priority}">${selectedMessage.priority} priority</span>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            Actions
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="replyToMessage()">
+                                <i class="fas fa-reply me-2"></i>Reply
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" onclick="forwardMessage()">
+                                <i class="fas fa-share me-2"></i>Forward
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" onclick="markAsUnread()">
+                                <i class="fas fa-envelope me-2"></i>Mark Unread
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" onclick="archiveMessage()">
+                                <i class="fas fa-archive me-2"></i>Archive
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#" onclick="deleteMessage()">
+                                <i class="fas fa-trash me-2"></i>Delete
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="mb-3">Contact Information</h6>
+                            <div class="mb-2"><strong>Name:</strong> ${selectedMessage.name}</div>
+                            <div class="mb-2"><strong>Email:</strong> 
+                                <a href="mailto:${selectedMessage.email}">${selectedMessage.email}</a>
+                            </div>
+                            ${selectedMessage.phone ? `<div class="mb-2"><strong>Phone:</strong> 
+                                <a href="tel:${selectedMessage.phone}">${selectedMessage.phone}</a>
+                            </div>` : ''}
+                            ${selectedMessage.company ? `<div class="mb-2"><strong>Company:</strong> ${selectedMessage.company}</div>` : ''}
+                            ${selectedMessage.website ? `<div class="mb-2"><strong>Website:</strong> 
+                                <a href="${selectedMessage.website}" target="_blank">${selectedMessage.website}</a>
+                            </div>` : ''}
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="mb-3">Request Details</h6>
+                            <div class="mb-2"><strong>Service:</strong> ${getServiceName(selectedMessage.service)}</div>
+                            <div class="mb-2"><strong>Budget:</strong> ${selectedMessage.budget}</div>
+                            <div class="mb-2"><strong>Source:</strong> ${selectedMessage.source}</div>
+                            <div class="mb-2"><strong>Status:</strong> 
+                                <span class="badge bg-${getStatusColor(selectedMessage.status)}">${selectedMessage.status}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h6 class="mb-3">Message</h6>
+                    <div class="border rounded p-3 bg-light">
+                        ${selectedMessage.message.replace(/\n/g, '<br>')}
+                    </div>
+                </div>
+                
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary" onclick="replyToMessage()">
+                        <i class="fas fa-reply me-1"></i>Reply
+                    </button>
+                    <button class="btn btn-success" onclick="callClient()">
+                        <i class="fas fa-phone me-1"></i>Call
+                    </button>
+                    <button class="btn btn-info" onclick="scheduleCallback()">
+                        <i class="fas fa-calendar me-1"></i>Schedule
+                    </button>
+                    <button class="btn btn-outline-secondary" onclick="addNote()">
+                        <i class="fas fa-sticky-note me-1"></i>Add Note
+                    </button>
+                </div>
+            `;
+        }
+        
+        // Reply to message
+        function replyToMessage() {
+            if (!selectedMessage) return;
+            
+            document.getElementById('replyTo').value = selectedMessage.email;
+            document.getElementById('replySubject').value = `Re: ${selectedMessage.subject}`;
+            document.getElementById('replyMessage').value = `Hi ${selectedMessage.name},\n\nThank you for contacting DigitalPro Agency. \n\n`;
+            
+            const modal = new bootstrap.Modal(document.getElementById('replyModal'));
+            modal.show();
+        }
+        
+        // Send reply
+        function sendReply() {
+            const replyTo = document.getElementById('replyTo').value;
+            const subject = document.getElementById('replySubject').value;
+            const message = document.getElementById('replyMessage').value;
+            const markReplied = document.getElementById('markAsReplied').checked;
+            
+            if (!message.trim()) {
+                alert('Please enter a message');
+                return;
+            }
+            
+            // Simulate sending email
+            console.log('Sending reply:', { replyTo, subject, message });
+            
+            // Update message status
+            if (markReplied && selectedMessage) {
+                selectedMessage.isReplied = true;
+                selectedMessage.status = 'replied';
+                updateStats();
+                renderMessages();
+                renderMessageDetail();
+            }
+            
+            // Close modal
+            bootstrap.Modal.getInstance(document.getElementById('replyModal')).hide();
+            
+            showNotification('Reply sent successfully!', 'success');
+        }
+        
+        // Filter functions
+        function setFilter(filter) {
+            currentFilter = filter;
+            
+            // Update active tab
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            filterMessages();
+        }
+        
+        function filterMessages() {
+            const searchTerm = document.getElementById('searchMessages').value.toLowerCase();
+            const serviceFilter = document.getElementById('serviceFilter').value;
+            const priorityFilter = document.getElementById('priorityFilter').value;
+            const statusFilter = document.getElementById('statusFilter').value;
+            const dateFilter = document.getElementById('dateFilter').value;
+            
+            filteredMessages = messages.filter(message => {
+                // Search filter
+                if (searchTerm) {
+                    const searchText = `${message.name} ${message.email} ${message.subject} ${message.message}`.toLowerCase();
+                    if (!searchText.includes(searchTerm)) return false;
+                }
+                
+                // Service filter
+                if (serviceFilter && message.service !== serviceFilter) return false;
+                
+                // Priority filter
+                if (priorityFilter && message.priority !== priorityFilter) return false;
+                
+                // Status filter
+                if (statusFilter) {
+                    if (statusFilter === 'unread' && message.isRead) return false;
+                    if (statusFilter === 'read' && !message.isRead) return false;
+                    if (statusFilter === 'replied' && !message.isReplied) return false;
+                    if (statusFilter === 'archived' && !message.isArchived) return false;
+                }
+                
+                // Date filter
+                if (dateFilter) {
+                    const messageDate = new Date(message.date);
+                    const now = new Date();
+                    
+                    if (dateFilter === 'today') {
+                        if (messageDate.toDateString() !== now.toDateString()) return false;
+                    } else if (dateFilter === 'week') {
+                        const weekAgo = new Date(now - 7 * 24 * 60 * 60 * 1000);
+                        if (messageDate < weekAgo) return false;
+                    } else if (dateFilter === 'month') {
+                        const monthAgo = new Date(now - 30 * 24 * 60 * 60 * 1000);
+                        if (messageDate < monthAgo) return false;
+                    }
+                }
+                
+                // Current filter
+                if (currentFilter === 'unread' && message.isRead) return false;
+                if (currentFilter === 'today') {
+                    const today = new Date().toDateString();
+                    if (message.date.toDateString() !== today) return false;
+                }
+                if (currentFilter === 'high' && message.priority !== 'high') return false;
+                if (currentFilter === 'archived' && !message.isArchived) return false;
+                
+                return true;
+            });
+            
+            renderMessages();
+        }
+        
+        // Update statistics
+        function updateStats() {
+            const unreadCount = messages.filter(m => !m.isRead).length;
+            const todayCount = messages.filter(m => {
+                const today = new Date().toDateString();
+                return m.date.toDateString() === today;
+            }).length;
+            
+            document.getElementById('totalMessages').textContent = messages.length;
+            document.getElementById('unreadMessages').textContent = unreadCount;
+            document.getElementById('todayMessages').textContent = todayCount;
+            document.getElementById('unreadCount').textContent = unreadCount;
+            
+            // Hide badge if no unread messages
+            const badge = document.getElementById('unreadCount');
+            if (unreadCount === 0) {
+                badge.style.display = 'none';
+            } else {
+                badge.style.display = 'inline';
+            }
+        }
+        
+        // Utility functions
+        function getServiceName(service) {
+            const services = {
+                'seo': 'SEO',
+                'ppc': 'PPC',
+                'social-media': 'Social Media',
+                'web-development': 'Web Development',
+                'consultation': 'Consultation',
+                'content-marketing': 'Content Marketing',
+                'email-marketing': 'Email Marketing'
+            };
+            return services[service] || service;
+        }
+        
+        function getStatusColor(status) {
+            const colors = {
+                'unread': 'primary',
+                'read': 'secondary',
+                'replied': 'success',
+                'archived': 'warning'
+            };
+            return colors[status] || 'secondary';
+        }
+        
+        function formatDate(date) {
+            const now = new Date();
+            const diffMs = now - date;
+            const diffMins = Math.floor(diffMs / 60000);
+            const diffHours = Math.floor(diffMins / 60);
+            const diffDays = Math.floor(diffHours / 24);
+            
+            if (diffMins < 60) return `${diffMins}m ago`;
+            if (diffHours < 24) return `${diffHours}h ago`;
+            if (diffDays < 7) return `${diffDays}d ago`;
+            
+            return date.toLocaleDateString();
+        }
+        
+        function formatFullDate(date) {
+            return date.toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+        
+        function truncateText(text, maxLength) {
+            if (text.length <= maxLength) return text;
+            return text.substring(0, maxLength) + '...';
+        }
+        
+        // Action functions
+        function markAllRead() {
+            messages.forEach(message => {
+                message.isRead = true;
+                message.status = 'read';
+            });
+            updateStats();
+            renderMessages();
+            showNotification('All messages marked as read', 'success');
+        }
+        
+        function markAsUnread() {
+            if (selectedMessage) {
+                selectedMessage.isRead = false;
+                selectedMessage.status = 'unread';
+                updateStats();
+                renderMessages();
+                showNotification('Message marked as unread', 'success');
+            }
+        }
+        
+        function archiveMessage() {
+            if (selectedMessage) {
+                selectedMessage.isArchived = true;
+                selectedMessage.status = 'archived';
+                updateStats();
+                renderMessages();
+                showNotification('Message archived', 'success');
+            }
+        }
+        
+        function deleteMessage() {
+            if (selectedMessage && confirm('Are you sure you want to delete this message?')) {
+                messages = messages.filter(m => m.id !== selectedMessage.id);
+                filteredMessages = filteredMessages.filter(m => m.id !== selectedMessage.id);
+                selectedMessage = null;
+                
+                document.getElementById('messageDetail').style.display = 'none';
+                document.getElementById('noSelection').style.display = 'block';
+                
+                updateStats();
+                renderMessages();
+                showNotification('Message deleted', 'success');
+            }
+        }
+        
+        function exportMessages() {
+            const csvData = [
+                ['Date', 'Name', 'Email', 'Company', 'Service', 'Subject', 'Status'],
+                ...filteredMessages.map(msg => [
+                    msg.date.toISOString(),
+                    msg.name,
+                    msg.email,
+                    msg.company || '',
+                    getServiceName(msg.service),
+                    msg.subject,
+                    msg.status
+                ])
+            ];
+            
+            const csvContent = csvData.map(row => row.join(',')).join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'contact-messages.csv';
+            a.click();
+            
+            URL.revokeObjectURL(url);
+            showNotification('Messages exported successfully!', 'success');
+        }
+        
+        function refreshMessages() {
+            showNotification('Messages refreshed', 'info');
+            // In real app, this would fetch from server
+        }
+        
+        function selectAll() {
+            const checkboxes = document.querySelectorAll('.message-checkbox');
+            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = !allChecked;
+            });
+        }
+        
+        function callClient() {
+            if (selectedMessage && selectedMessage.phone) {
+                window.open(`tel:${selectedMessage.phone}`);
+            } else {
+                alert('No phone number available for this contact');
+            }
+        }
+        
+        function scheduleCallback() {
+            showNotification('Callback scheduling feature coming soon!', 'info');
+        }
+        
+        function addNote() {
+            const note = prompt('Add a note for this message:');
+            if (note) {
+                showNotification('Note added successfully!', 'success');
+            }
+        }
+        
+        function forwardMessage() {
+            showNotification('Message forwarding feature coming soon!', 'info');
+        }
+        
+        function startAutoRefresh() {
+            setInterval(() => {
+                // In real app, check for new messages
+                console.log('Checking for new messages...');
+            }, 30000);
+        }
+        
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+            notification.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+        
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                localStorage.removeItem('admin_token');
+                window.location.href = '../index.html';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "How to Rank on Google in 2025: Complete SEO Guide",
+      "slug": "how-to-rank-on-google-2025",
+      "excerpt": "Discover the latest SEO strategies and algorithm updates that will help your website rank higher in Google search results. Our comprehensive guide covers everything from technical SEO to content optimization.",
+      "category": "seo",
+      "tags": ["SEO", "Google", "Ranking", "2025", "Algorithm", "Technical SEO", "Content Optimization"],
+      "author": {
+        "id": 1,
+        "name": "John Smith",
+        "avatar": "assets/images/team/ceo.webp",
+        "bio": "CEO & SEO Expert",
+        "social": {
+          "linkedin": "https://linkedin.com/in/johnsmith-digitalpro",
+          "twitter": "https://twitter.com/johnsmith_seo"
+        }
+      },
+      "publish_date": "2025-01-15T09:00:00Z",
+      "update_date": "2025-01-15T09:00:00Z",
+      "read_time": 8,
+      "views": 1200,
+      "likes": 89,
+      "comments": 23,
+      "shares": 45,
+      "featured_image": "assets/images/blog/blog-1.webp",
+      "featured": true,
+      "status": "published",
+      "seo": {
+        "meta_title": "How to Rank on Google in 2025: Complete SEO Guide",
+        "meta_description": "Learn the latest SEO strategies for 2025. Complete guide to ranking higher on Google with technical SEO, content optimization, and algorithm updates.",
+        "focus_keyword": "rank on Google 2025",
+        "readability": "good",
+        "seo_score": 95
+      },
+      "outline": [
+        "Introduction to Google's 2025 Algorithm",
+        "Core Web Vitals and User Experience",
+        "Technical SEO Fundamentals",
+        "Content Optimization Strategies",
+        "Link Building in 2025",
+        "Local SEO Best Practices",
+        "Mobile-First Indexing",
+        "AI and Search Intent",
+        "Measuring SEO Success"
+      ],
+      "related_posts": [2, 4, 5]
+    },
+    {
+      "id": 2,
+      "title": "10 Social Media Marketing Tips That Actually Work in 2025",
+      "slug": "social-media-marketing-tips-2025",
+      "excerpt": "Boost your social media engagement and ROI with these proven strategies. Learn how to create content that converts and builds lasting relationships with your audience.",
+      "category": "social-media",
+      "tags": ["Social Media", "Marketing", "Engagement", "ROI", "Content Strategy", "2025"],
+      "author": {
+        "id": 7,
+        "name": "James Wilson",
+        "avatar": "assets/images/team/team-placeholder.webp",
+        "bio": "Social Media Strategist"
+      },
+      "publish_date": "2025-01-12T10:30:00Z",
+      "update_date": "2025-01-12T10:30:00Z",
+      "read_time": 6,
+      "views": 950,
+      "likes": 67,
+      "comments": 15,
+      "shares": 32,
+      "featured_image": "assets/images/blog/blog-2.webp",
+      "featured": false,
+      "status": "published",
+      "seo": {
+        "meta_title": "10 Social Media Marketing Tips That Work in 2025",
+        "meta_description": "Discover 10 proven social media marketing strategies for 2025. Increase engagement, build your audience, and drive real business results.",
+        "focus_keyword": "social media marketing tips 2025",
+        "readability": "excellent",
+        "seo_score": 88
+      },
+      "outline": [
+        "The Social Media Landscape in 2025",
+        "Tip 1: Authenticity Over Perfection",
+        "Tip 2: Video-First Content Strategy",
+        "Tip 3: Community Building Focus",
+        "Tip 4: AI-Powered Personalization",
+        "Tip 5: Cross-Platform Storytelling",
+        "Tip 6: User-Generated Content",
+        "Tip 7: Social Commerce Integration",
+        "Tip 8: Real-Time Engagement",
+        "Tip 9: Data-Driven Decisions",
+        "Tip 10: Long-Term Relationship Building"
+      ],
+      "related_posts": [1, 3, 6]
+    },
+    {
+      "id": 3,
+      "title": "Advanced PPC Strategies to Maximize Your ROI in 2025",
+      "slug": "advanced-ppc-strategies-roi-2025",
+      "excerpt": "Master the latest Google Ads features and bidding strategies to reduce costs and increase conversions. Comprehensive guide with real campaign examples.",
+      "category": "ppc",
+      "tags": ["PPC", "Google Ads", "ROI", "Bidding", "Conversions", "Campaign Optimization"],
+      "author": {
+        "id": 6,
+        "name": "Lisa Thompson",
+        "avatar": "assets/images/team/team-placeholder.webp",
+        "bio": "PPC Campaign Manager"
+      },
+      "publish_date": "2025-01-10T14:15:00Z",
+      "update_date": "2025-01-10T14:15:00Z",
+      "read_time": 7,
+      "views": 800,
+      "likes": 45,
+      "comments": 12,
+      "shares": 28,
+      "featured_image": "assets/images/blog/blog-3.webp",
+      "featured": false,
+      "status": "published",
+      "seo": {
+        "meta_title": "Advanced PPC Strategies for Maximum ROI in 2025",
+        "meta_description": "Learn advanced PPC strategies for 2025. Optimize Google Ads campaigns, reduce costs, and maximize ROI with proven bidding strategies.",
+        "focus_keyword": "advanced PPC strategies 2025",
+        "readability": "good",
+        "seo_score": 91
+      },
+      "outline": [
+        "PPC Evolution in 2025",
+        "Smart Bidding Strategies",
+        "Audience Targeting Mastery",
+        "Ad Extensions Optimization",
+        "Landing Page Alignment",
+        "Cross-Channel Campaign Integration",
+        "Performance Max Campaigns",
+        "Attribution Modeling",
+        "Budget Optimization Techniques"
+      ],
+      "related_posts": [1, 4, 8]
+    },
+    {
+      "id": 4,
+      "title": "SEO vs PPC: Which Strategy Should You Choose in 2025?",
+      "slug": "seo-vs-ppc-strategy-2025",
+      "excerpt": "Confused between SEO and PPC? Learn when to use each strategy, how they complement each other, and which delivers better ROI for different business types.",
+      "category": "strategy",
+      "tags": ["SEO", "PPC", "Strategy", "Comparison", "ROI", "Digital Marketing"],
+      "author": {
+        "id": 1,
+        "name": "John Smith",
+        "avatar": "assets/images/team/ceo.webp",
+        "bio": "CEO & SEO Expert"
+      },
+      "publish_date": "2025-01-08T11:00:00Z",
+      "update_date": "2025-01-08T11:00:00Z",
+      "read_time": 5,
+      "views": 1500,
+      "likes": 124,
+      "comments": 31,
+      "shares": 67,
+      "featured_image": "assets/images/blog/seo-vs-ppc.webp",
+      "featured": false,
+      "status": "published",
+      "seo": {
+        "meta_title": "SEO vs PPC: Which Strategy to Choose in 2025?",
+        "meta_description": "Compare SEO vs PPC strategies for 2025. Discover which approach works best for your business goals, timeline, and budget.",
+        "focus_keyword": "SEO vs PPC 2025",
+        "readability": "excellent",
+        "seo_score": 93
+      },
+      "outline": [
+        "The Great Debate: SEO vs PPC",
+        "Understanding SEO Benefits",
+        "PPC Advantages Explained",
+        "Cost Comparison Analysis",
+        "Timeline Expectations",
+        "Industry-Specific Recommendations",
+        "Hybrid Approach Strategies",
+        "Making the Right Choice"
+      ],
+      "related_posts": [1, 3, 5]
+    },
+    {
+      "id": 5,
+      "title": "The Ultimate Content Marketing Guide for Small Businesses",
+      "slug": "content-marketing-guide-small-business",
+      "excerpt": "Create compelling content that drives traffic, engagement, and conversions. Step-by-step guide with templates and real-world examples.",
+      "category": "content-marketing",
+      "tags": ["Content Marketing", "Small Business", "Traffic", "Conversions", "Strategy"],
+      "author": {
+        "id": 4,
+        "name": "Emily Rodriguez",
+        "avatar": "assets/images/team/team-placeholder.webp",
+        "bio": "Content Marketing Manager"
+      },
+      "publish_date": "2025-01-05T08:45:00Z",
+      "update_date": "2025-01-05T08:45:00Z",
+      "read_time": 9,
+      "views": 700,
+      "likes": 38,
+      "comments": 9,
+      "shares": 22,
+      "featured_image": "assets/images/blog/content-marketing.webp",
+      "featured": false,
+      "status": "published",
+      "seo": {
+        "meta_title": "Ultimate Content Marketing Guide for Small Businesses",
+        "meta_description": "Complete content marketing guide for small businesses. Learn to create compelling content that drives traffic and conversions.",
+        "focus_keyword": "content marketing small business",
+        "readability": "good",
+        "seo_score": 87
+      },
+      "outline": [
+        "Content Marketing for Small Business",
+        "Defining Your Content Strategy",
+        "Understanding Your Audience",
+        "Content Types That Convert",
+        "Creating a Content Calendar",
+        "Distribution Channels",
+        "Measuring Content Success",
+        "Scaling Your Content Efforts"
+      ],
+      "related_posts": [2, 6, 1]
+    },
+    {
+      "id": 6,
+      "title": "Local SEO: How to Dominate Your Local Market",
+      "slug": "local-seo-dominate-market",
+      "excerpt": "Master local SEO to attract nearby customers and beat local competition. Complete guide to Google My Business optimization and local rankings.",
+      "category": "seo",
+      "tags": ["Local SEO", "Google My Business", "Local Search", "Local Rankings"],
+      "author": {
+        "id": 5,
+        "name": "David Kim",
+        "avatar": "assets/images/team/team-placeholder.webp",
+        "bio": "Senior SEO Specialist"
+      },
+      "publish_date": "2025-01-03T13:20:00Z",
+      "update_date": "2025-01-03T13:20:00Z",
+      "read_time": 6,
+      "views": 1100,
+      "likes": 78,
+      "comments": 18,
+      "shares": 41,
+      "featured_image": "assets/images/blog/local-seo.webp",
+      "featured": false,
+      "status": "published",
+      "seo": {
+        "meta_title": "Local SEO Guide: Dominate Your Local Market in 2025",
+        "meta_description": "Master local SEO strategies to attract nearby customers. Complete guide to Google My Business optimization and local search rankings.",
+        "focus_keyword": "local SEO guide",
+        "readability": "good",
+        "seo_score": 90
+      },
+      "outline": [
+        "Introduction to Local SEO",
+        "Google My Business Optimization",
+        "Local Keyword Research",
+        "On-Page Local SEO",
+        "Local Link Building",
+        "Review Management",
+        "Local Citations",
+        "Tracking Local SEO Success"
+      ],
+      "related_posts": [1, 4, 7]
+    },
+    {
+      "id": 7,
+      "title": "How AI is Revolutionizing Digital Marketing in 2025",
+      "slug": "ai-revolutionizing-digital-marketing-2025",
+      "excerpt": "Explore the latest AI tools and technologies transforming digital marketing. Learn how to leverage AI for better targeting, automation, and ROI.",
+      "category": "trends",
+      "tags": ["AI", "Artificial Intelligence", "Marketing Technology", "Automation", "2025"],
+      "author": {
+        "id": 2,
+        "name": "Sarah Johnson",
+        "avatar": "assets/images/team/cto.webp",
+        "bio": "CTO & Lead Developer"
+      },
+      "publish_date": "2024-12-30T16:00:00Z",
+      "update_date": "2024-12-30T16:00:00Z",
+      "read_time": 8,
+      "views": 2100,
+      "likes": 156,
+      "comments": 42,
+      "shares": 89,
+      "featured_image": "assets/images/blog/ai-marketing.webp",
+      "featured": false,
+      "status": "published",
+      "seo": {
+        "meta_title": "How AI is Revolutionizing Digital Marketing in 2025",
+        "meta_description": "Discover how AI is transforming digital marketing in 2025. Learn about AI tools, automation, and technologies reshaping the industry.",
+        "focus_keyword": "AI digital marketing 2025",
+        "readability": "good",
+        "seo_score": 92
+      },
+      "outline": [
+        "The AI Marketing Revolution",
+        "AI-Powered Customer Segmentation",
+        "Automated Content Creation",
+        "Predictive Analytics in Marketing",
+        "Chatbots and Customer Service",
+        "AI in Advertising Optimization",
+        "Ethical AI in Marketing",
+        "Future of AI Marketing"
+      ],
+      "related_posts": [1, 2, 8]
+    },
+    {
+      "id": 8,
+      "title": "Email Marketing Best Practices for 2025",
+      "slug": "email-marketing-best-practices-2025",
+      "excerpt": "Build relationships and drive sales with targeted email campaigns and automation. Learn the latest trends and strategies for email marketing success.",
+      "category": "email-marketing",
+      "tags": ["Email Marketing", "Automation", "Personalization", "Best Practices", "2025"],
+      "author": {
+        "id": 3,
+        "name": "Mike Davis",
+        "avatar": "assets/images/team/marketing-head.webp",
+        "bio": "Marketing Director"
+      },
+      "publish_date": "2024-12-28T12:00:00Z",
+      "update_date": "2024-12-28T12:00:00Z",
+      "read_time": 7,
+      "views": 850,
+      "likes": 62,
+      "comments": 14,
+      "shares": 33,
+      "featured_image": "assets/images/blog/email-marketing.webp",
+      "featured": false,
+      "status": "published",
+      "seo": {
+        "meta_title": "Email Marketing Best Practices for 2025",
+        "meta_description": "Learn email marketing best practices for 2025. Discover automation strategies, personalization techniques, and ways to improve open rates.",
+        "focus_keyword": "email marketing best practices 2025",
+        "readability": "excellent",
+        "seo_score": 89
+      },
+      "outline": [
+        "Email Marketing in 2025",
+        "Building Quality Email Lists",
+        "Segmentation Strategies",
+        "Personalization Techniques",
+        "Mobile Email Optimization",
+        "Automation Workflows",
+        "A/B Testing Email Campaigns",
+        "Email Analytics and Metrics"
+      ],
+      "related_posts": [2, 5, 7]
+    }
+  ],
+  "categories": {
+    "seo": {
+      "name": "SEO",
+      "slug": "seo",
+      "description": "Search Engine Optimization tips, strategies, and best practices",
+      "color": "#2563eb",
+      "post_count": 3
+    },
+    "ppc": {
+      "name": "PPC",
+      "slug": "ppc",
+      "description": "Pay-Per-Click advertising strategies and campaign optimization",
+      "color": "#10b981",
+      "post_count": 1
+    },
+    "social-media": {
+      "name": "Social Media",
+      "slug": "social-media",
+      "description": "Social media marketing strategies and best practices",
+      "color": "#f59e0b",
+      "post_count": 1
+    },
+    "content-marketing": {
+      "name": "Content Marketing",
+      "slug": "content-marketing",
+      "description": "Content creation, strategy, and marketing techniques",
+      "color": "#8b5cf6",
+      "post_count": 1
+    },
+    "trends": {
+      "name": "Industry Trends",
+      "slug": "trends",
+      "description": "Latest trends and innovations in digital marketing",
+      "color": "#ef4444",
+      "post_count": 1
+    },
+    "email-marketing": {
+      "name": "Email Marketing",
+      "slug": "email-marketing",
+      "description": "Email marketing strategies, automation, and best practices",
+      "color": "#06b6d4",
+      "post_count": 1
+    },
+    "strategy": {
+      "name": "Strategy",
+      "slug": "strategy",
+      "description": "Digital marketing strategy and planning",
+      "color": "#84cc16",
+      "post_count": 1
+    }
+  },
+  "stats": {
+    "total_posts": 8,
+    "total_views": 9200,
+    "total_likes": 659,
+    "total_comments": 164,
+    "total_shares": 357,
+    "average_read_time": 7,
+    "most_popular_category": "seo",
+    "most_viewed_post": "How AI is Revolutionizing Digital Marketing in 2025",
+    "publication_frequency": "2-3 posts per week"
+  }
+}

@@ -1,0 +1,1146 @@
+.editor-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+        }
+        
+        .admin-header {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 16px 0;
+        }
+        
+        .form-section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 24px;
+        }
+        
+        .ql-editor {
+            min-height: 400px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .preview-container {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .tag-input {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 8px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            min-height: 42px;
+            align-items: center;
+        }
+        
+        .tag-item {
+            background: #3b82f6;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 16px;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .tag-remove {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tag-remove:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .tag-input input {
+            border: none;
+            outline: none;
+            flex: 1;
+            min-width: 120px;
+            padding: 4px;
+        }
+        
+        .image-upload-area {
+            border: 2px dashed #d1d5db;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .image-upload-area:hover {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.05);
+        }
+        
+        .image-upload-area.dragover {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        .uploaded-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 16px;
+        }
+        
+        .save-status {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .save-status.saved {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+        
+        .save-status.saving {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+        
+        .save-status.error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+        }
+        
+        .word-count {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        .seo-score {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .seo-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .seo-good { background: #10b981; }
+        .seo-fair { background: #f59e0b; }
+        .seo-poor { background: #ef4444; }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 admin-sidebar p-3">
+                <div class="d-flex align-items-center mb-4">
+                    <h4 class="mb-0">
+                        <i class="fas fa-shield-alt me-2"></i>
+                        Admin Panel
+                    </h4>
+                </div>
+                
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="dashboard.html">
+                        <i class="fas fa-tachometer-alt me-2"></i>
+                        Dashboard
+                    </a>
+                    <a class="nav-link active" href="blog-editor.html">
+                        <i class="fas fa-edit me-2"></i>
+                        Blog Editor
+                    </a>
+                    <a class="nav-link" href="contact-messages.html">
+                        <i class="fas fa-envelope me-2"></i>
+                        Messages
+                        <span class="badge bg-danger ms-2">3</span>
+                    </a>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-file-alt me-2"></i>
+                        Content
+                    </a>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-chart-bar me-2"></i>
+                        Analytics
+                    </a>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-users me-2"></i>
+                        Users
+                    </a>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog me-2"></i>
+                        Settings
+                    </a>
+                    <hr class="my-3" style="border-color: rgba(255,255,255,0.2);">
+                    <a class="nav-link" href="../index.html">
+                        <i class="fas fa-arrow-left me-2"></i>
+                        Back to Website
+                    </a>
+                    <a class="nav-link text-danger" href="#" onclick="logout()">
+                        <i class="fas fa-sign-out-alt me-2"></i>
+                        Logout
+                    </a>
+                </nav>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10 admin-content p-0">
+                <!-- Header -->
+                <div class="admin-header">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h1 class="h3 mb-0">Blog Editor</h1>
+                                <p class="text-muted mb-0">Create and manage blog posts</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="save-status saved" id="saveStatus">
+                                    <i class="fas fa-check me-1"></i>
+                                    All changes saved
+                                </div>
+                                <button class="btn btn-outline-secondary" onclick="previewPost()">
+                                    <i class="fas fa-eye me-1"></i>
+                                    Preview
+                                </button>
+                                <button class="btn btn-success" onclick="publishPost()">
+                                    <i class="fas fa-paper-plane me-1"></i>
+                                    Publish
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Editor Content -->
+                <div class="container-fluid px-4 py-4">
+                    <div class="row">
+                        <!-- Editor Column -->
+                        <div class="col-lg-8">
+                            <!-- Post Details -->
+                            <div class="form-section">
+                                <h5 class="mb-4">Post Details</h5>
+                                
+                                <div class="mb-3">
+                                    <label for="postTitle" class="form-label">Title *</label>
+                                    <input type="text" class="form-control form-control-lg" id="postTitle" 
+                                           placeholder="Enter post title..." oninput="updateSlug(); updateSEO();">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="postSlug" class="form-label">URL Slug</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">yourwebsite.com/blog/</span>
+                                        <input type="text" class="form-control" id="postSlug" placeholder="post-url-slug">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="postExcerpt" class="form-label">Excerpt</label>
+                                    <textarea class="form-control" id="postExcerpt" rows="3" 
+                                              placeholder="Brief description of the post..." oninput="updateSEO();"></textarea>
+                                    <div class="form-text">This will be used in search results and social media previews.</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Featured Image -->
+                            <div class="form-section">
+                                <h5 class="mb-4">Featured Image</h5>
+                                
+                                <div class="image-upload-area" id="imageUploadArea" onclick="document.getElementById('featuredImage').click()">
+                                    <div id="uploadPlaceholder">
+                                        <i class="fas fa-cloud-upload-alt fa-3x text-muted mb-3"></i>
+                                        <h6>Click to upload or drag and drop</h6>
+                                        <p class="text-muted mb-0">PNG, JPG or WebP (max 2MB)</p>
+                                    </div>
+                                    <div id="imagePreview" style="display: none;">
+                                        <img id="previewImg" class="uploaded-image" alt="Featured image">
+                                        <div class="mt-2">
+                                            <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeImage()">
+                                                <i class="fas fa-trash me-1"></i>
+                                                Remove Image
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="file" id="featuredImage" accept="image/*" style="display: none;" onchange="handleImageUpload(this)">
+                            </div>
+                            
+                            <!-- Content Editor -->
+                            <div class="form-section">
+                                <h5 class="mb-4">Content</h5>
+                                
+                                <div id="editor"></div>
+                                
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <div class="word-count">
+                                        Words: <span id="wordCount">0</span> | Characters: <span id="charCount">0</span>
+                                    </div>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleFullscreen()">
+                                        <i class="fas fa-expand me-1"></i>
+                                        Fullscreen
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Sidebar Column -->
+                        <div class="col-lg-4">
+                            <!-- Post Settings -->
+                            <div class="form-section">
+                                <h5 class="mb-4">Post Settings</h5>
+                                
+                                <div class="mb-3">
+                                    <label for="postStatus" class="form-label">Status</label>
+                                    <select class="form-select" id="postStatus">
+                                        <option value="draft">Draft</option>
+                                        <option value="published">Published</option>
+                                        <option value="scheduled">Scheduled</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="postCategory" class="form-label">Category</label>
+                                    <select class="form-select" id="postCategory">
+                                        <option value="seo">SEO</option>
+                                        <option value="ppc">PPC</option>
+                                        <option value="social-media">Social Media</option>
+                                        <option value="content-marketing">Content Marketing</option>
+                                        <option value="trends">Industry Trends</option>
+                                        <option value="email-marketing">Email Marketing</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="postAuthor" class="form-label">Author</label>
+                                    <select class="form-select" id="postAuthor">
+                                        <option value="john-smith">John Smith</option>
+                                        <option value="sarah-johnson">Sarah Johnson</option>
+                                        <option value="mike-davis">Mike Davis</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="publishDate" class="form-label">Publish Date</label>
+                                    <input type="datetime-local" class="form-control" id="publishDate">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Tags</label>
+                                    <div class="tag-input" id="tagInput">
+                                        <input type="text" placeholder="Add tags..." onkeypress="handleTagInput(event)">
+                                    </div>
+                                    <div class="form-text">Press Enter to add tags</div>
+                                </div>
+                                
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="featuredPost">
+                                    <label class="form-check-label" for="featuredPost">
+                                        Featured Post
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- SEO Settings -->
+                            <div class="form-section">
+                                <h5 class="mb-4">SEO Optimization</h5>
+                                
+                                <div class="seo-score mb-3">
+                                    <div class="seo-circle seo-fair" id="seoScore">75</div>
+                                    <div>
+                                        <div class="fw-medium">SEO Score</div>
+                                        <div class="text-muted small">Good optimization</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="metaTitle" class="form-label">Meta Title</label>
+                                    <input type="text" class="form-control" id="metaTitle" 
+                                           placeholder="SEO title..." oninput="updateSEO();">
+                                    <div class="form-text">
+                                        <span id="titleLength">0</span>/60 characters
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="metaDescription" class="form-label">Meta Description</label>
+                                    <textarea class="form-control" id="metaDescription" rows="3" 
+                                              placeholder="SEO description..." oninput="updateSEO();"></textarea>
+                                    <div class="form-text">
+                                        <span id="descLength">0</span>/160 characters
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="focusKeyword" class="form-label">Focus Keyword</label>
+                                    <input type="text" class="form-control" id="focusKeyword" 
+                                           placeholder="Main keyword..." oninput="updateSEO();">
+                                </div>
+                                
+                                <div class="seo-checks">
+                                    <h6 class="mb-3">SEO Checklist</h6>
+                                    <div class="check-item mb-2" id="titleKeywordCheck">
+                                        <i class="fas fa-times text-danger me-2"></i>
+                                        <span>Title contains focus keyword</span>
+                                    </div>
+                                    <div class="check-item mb-2" id="contentLengthCheck">
+                                        <i class="fas fa-times text-danger me-2"></i>
+                                        <span>Content length (min 300 words)</span>
+                                    </div>
+                                    <div class="check-item mb-2" id="imageAltCheck">
+                                        <i class="fas fa-times text-danger me-2"></i>
+                                        <span>Featured image has alt text</span>
+                                    </div>
+                                    <div class="check-item mb-2" id="metaDescCheck">
+                                        <i class="fas fa-times text-danger me-2"></i>
+                                        <span>Meta description set</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Preview -->
+                            <div class="form-section">
+                                <h5 class="mb-4">Social Media Preview</h5>
+                                
+                                <div class="border rounded p-3">
+                                    <div class="d-flex mb-2">
+                                        <div class="flex-shrink-0">
+                                            <img src="../assets/images/icons/android-chrome-192x192.png" 
+                                                 width="20" height="20" alt="Site icon">
+                                        </div>
+                                        <div class="flex-grow-1 ms-2">
+                                            <div class="text-muted small">yourwebsite.com</div>
+                                            <div class="fw-medium" id="previewTitle">Post title will appear here</div>
+                                            <div class="text-muted small" id="previewDescription">Post description will appear here</div>
+                                        </div>
+                                    </div>
+                                    <div id="previewImageContainer" style="display: none;">
+                                        <img id="previewSocialImage" class="w-100 rounded" style="max-height: 120px; object-fit: cover;" alt="Preview">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div class="modal fade" id="previewModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Post Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="preview-container" id="previewContainer">
+                        <!-- Preview content will be generated here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="publishPost()">Publish Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.min.js"></script>
+    
+    <script>
+        let quill;
+        let autoSaveTimer;
+        let tags = [];
+        
+        // Initialize editor
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeEditor();
+            setupDragDrop();
+            setDefaultDate();
+            startAutoSave();
+        });
+        
+        // Initialize Quill editor
+        function initializeEditor() {
+            quill = new Quill('#editor', {
+                theme: 'snow',
+                modules: {
+                    toolbar: [
+                        [{ 'header': [1, 2, 3, false] }],
+                        ['bold', 'italic', 'underline', 'strike'],
+                        [{ 'color': [] }, { 'background': [] }],
+                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                        [{ 'align': [] }],
+                        ['link', 'image', 'video'],
+                        ['blockquote', 'code-block'],
+                        ['clean']
+                    ]
+                },
+                placeholder: 'Start writing your blog post...'
+            });
+            
+            // Update word count on text change
+            quill.on('text-change', function() {
+                updateWordCount();
+                updateSEO();
+                setSaveStatus('saving');
+                
+                // Debounced auto-save
+                clearTimeout(autoSaveTimer);
+                autoSaveTimer = setTimeout(() => {
+                    autoSave();
+                }, 2000);
+            });
+        }
+        
+        // Setup drag and drop for images
+        function setupDragDrop() {
+            const uploadArea = document.getElementById('imageUploadArea');
+            
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+            
+            uploadArea.addEventListener('dragleave', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+            });
+            
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleImageUpload({ files: files });
+                }
+            });
+        }
+        
+        // Handle image upload
+        function handleImageUpload(input) {
+            const file = input.files[0];
+            if (!file) return;
+            
+            // Validate file
+            if (!file.type.startsWith('image/')) {
+                alert('Please select an image file');
+                return;
+            }
+            
+            if (file.size > 2 * 1024 * 1024) {
+                alert('Image size must be less than 2MB');
+                return;
+            }
+            
+            // Show image preview
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const previewImg = document.getElementById('previewImg');
+                const previewDiv = document.getElementById('imagePreview');
+                const placeholder = document.getElementById('uploadPlaceholder');
+                const socialImage = document.getElementById('previewSocialImage');
+                const socialContainer = document.getElementById('previewImageContainer');
+                
+                previewImg.src = e.target.result;
+                socialImage.src = e.target.result;
+                
+                placeholder.style.display = 'none';
+                previewDiv.style.display = 'block';
+                socialContainer.style.display = 'block';
+                
+                updateSEO();
+            };
+            
+            reader.readAsDataURL(file);
+        }
+        
+        // Remove uploaded image
+        function removeImage() {
+            const previewDiv = document.getElementById('imagePreview');
+            const placeholder = document.getElementById('uploadPlaceholder');
+            const socialContainer = document.getElementById('previewImageContainer');
+            const fileInput = document.getElementById('featuredImage');
+            
+            previewDiv.style.display = 'none';
+            placeholder.style.display = 'block';
+            socialContainer.style.display = 'none';
+            fileInput.value = '';
+            
+            updateSEO();
+        }
+        
+        // Update URL slug
+        function updateSlug() {
+            const title = document.getElementById('postTitle').value;
+            const slug = title.toLowerCase()
+                .replace(/[^\w\s-]/g, '')
+                .replace(/\s+/g, '-')
+                .replace(/--+/g, '-')
+                .trim();
+            
+            document.getElementById('postSlug').value = slug;
+            
+            // Auto-fill meta title if empty
+            const metaTitle = document.getElementById('metaTitle');
+            if (!metaTitle.value) {
+                metaTitle.value = title;
+                updateSEO();
+            }
+            
+            updatePreview();
+        }
+        
+        // Handle tag input
+        function handleTagInput(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                const input = event.target;
+                const tag = input.value.trim();
+                
+                if (tag && !tags.includes(tag)) {
+                    addTag(tag);
+                    input.value = '';
+                }
+            }
+        }
+        
+        // Add tag
+        function addTag(tag) {
+            tags.push(tag);
+            updateTagDisplay();
+        }
+        
+        // Remove tag
+        function removeTag(tag) {
+            tags = tags.filter(t => t !== tag);
+            updateTagDisplay();
+        }
+        
+        // Update tag display
+        function updateTagDisplay() {
+            const tagInput = document.getElementById('tagInput');
+            const input = tagInput.querySelector('input');
+            
+            // Remove existing tag elements
+            tagInput.querySelectorAll('.tag-item').forEach(el => el.remove());
+            
+            // Add tag elements
+            tags.forEach(tag => {
+                const tagElement = document.createElement('div');
+                tagElement.className = 'tag-item';
+                tagElement.innerHTML = `
+                    ${tag}
+                    <button type="button" class="tag-remove" onclick="removeTag('${tag}')">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                
+                tagInput.insertBefore(tagElement, input);
+            });
+        }
+        
+        // Update word count
+        function updateWordCount() {
+            const text = quill.getText();
+            const words = text.trim().split(/\s+/).filter(word => word.length > 0).length;
+            const chars = text.length;
+            
+            document.getElementById('wordCount').textContent = words;
+            document.getElementById('charCount').textContent = chars;
+        }
+        
+        // Update SEO analysis
+        function updateSEO() {
+            const title = document.getElementById('postTitle').value;
+            const metaTitle = document.getElementById('metaTitle').value;
+            const metaDesc = document.getElementById('metaDescription').value;
+            const focusKeyword = document.getElementById('focusKeyword').value.toLowerCase();
+            const content = quill.getText().toLowerCase();
+            const hasImage = document.getElementById('previewImg').src;
+            
+            // Update character counts
+            document.getElementById('titleLength').textContent = metaTitle.length;
+            document.getElementById('descLength').textContent = metaDesc.length;
+            
+            // SEO checks
+            let score = 0;
+            let maxScore = 4;
+            
+            // Title contains keyword
+            const titleCheck = document.getElementById('titleKeywordCheck');
+            if (focusKeyword && (title.toLowerCase().includes(focusKeyword) || metaTitle.toLowerCase().includes(focusKeyword))) {
+                titleCheck.innerHTML = '<i class="fas fa-check text-success me-2"></i><span>Title contains focus keyword</span>';
+                score++;
+            } else {
+                titleCheck.innerHTML = '<i class="fas fa-times text-danger me-2"></i><span>Title contains focus keyword</span>';
+            }
+            
+            // Content length
+            const contentCheck = document.getElementById('contentLengthCheck');
+            const wordCount = parseInt(document.getElementById('wordCount').textContent);
+            if (wordCount >= 300) {
+                contentCheck.innerHTML = '<i class="fas fa-check text-success me-2"></i><span>Content length (min 300 words)</span>';
+                score++;
+            } else {
+                contentCheck.innerHTML = '<i class="fas fa-times text-danger me-2"></i><span>Content length (min 300 words)</span>';
+            }
+            
+            // Image alt text
+            const imageCheck = document.getElementById('imageAltCheck');
+            if (hasImage && hasImage !== window.location.href) {
+                imageCheck.innerHTML = '<i class="fas fa-check text-success me-2"></i><span>Featured image added</span>';
+                score++;
+            } else {
+                imageCheck.innerHTML = '<i class="fas fa-times text-danger me-2"></i><span>Featured image has alt text</span>';
+            }
+            
+            // Meta description
+            const metaCheck = document.getElementById('metaDescCheck');
+            if (metaDesc.length >= 120 && metaDesc.length <= 160) {
+                metaCheck.innerHTML = '<i class="fas fa-check text-success me-2"></i><span>Meta description set</span>';
+                score++;
+            } else {
+                metaCheck.innerHTML = '<i class="fas fa-times text-danger me-2"></i><span>Meta description set</span>';
+            }
+            
+            // Update SEO score
+            const seoScore = Math.round((score / maxScore) * 100);
+            const scoreElement = document.getElementById('seoScore');
+            scoreElement.textContent = seoScore;
+            
+            scoreElement.className = 'seo-circle ';
+            if (seoScore >= 80) {
+                scoreElement.className += 'seo-good';
+            } else if (seoScore >= 60) {
+                scoreElement.className += 'seo-fair';
+            } else {
+                scoreElement.className += 'seo-poor';
+            }
+            
+            updatePreview();
+        }
+        
+        // Update social media preview
+        function updatePreview() {
+            const title = document.getElementById('postTitle').value || 'Post title will appear here';
+            const excerpt = document.getElementById('postExcerpt').value || 'Post description will appear here';
+            
+            document.getElementById('previewTitle').textContent = title;
+            document.getElementById('previewDescription').textContent = excerpt;
+        }
+        
+        // Set default publish date
+        function setDefaultDate() {
+            const now = new Date();
+            const isoString = now.toISOString().slice(0, 16);
+            document.getElementById('publishDate').value = isoString;
+        }
+        
+        // Auto-save function
+        function autoSave() {
+            const postData = collectPostData();
+            
+            // Save to localStorage (in real app, this would be an API call)
+            localStorage.setItem('draft_post', JSON.stringify(postData));
+            
+            setSaveStatus('saved');
+        }
+        
+        // Collect post data
+        function collectPostData() {
+            return {
+                title: document.getElementById('postTitle').value,
+                slug: document.getElementById('postSlug').value,
+                excerpt: document.getElementById('postExcerpt').value,
+                content: quill.getContents(),
+                htmlContent: quill.root.innerHTML,
+                status: document.getElementById('postStatus').value,
+                category: document.getElementById('postCategory').value,
+                author: document.getElementById('postAuthor').value,
+                publishDate: document.getElementById('publishDate').value,
+                tags: tags,
+                featured: document.getElementById('featuredPost').checked,
+                metaTitle: document.getElementById('metaTitle').value,
+                metaDescription: document.getElementById('metaDescription').value,
+                focusKeyword: document.getElementById('focusKeyword').value,
+                featuredImage: document.getElementById('previewImg').src,
+                lastModified: new Date().toISOString()
+            };
+        }
+        
+        // Set save status
+        function setSaveStatus(status) {
+            const statusElement = document.getElementById('saveStatus');
+            
+            statusElement.className = 'save-status ' + status;
+            
+            switch (status) {
+                case 'saved':
+                    statusElement.innerHTML = '<i class="fas fa-check me-1"></i>All changes saved';
+                    break;
+                case 'saving':
+                    statusElement.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>Saving...';
+                    break;
+                case 'error':
+                    statusElement.innerHTML = '<i class="fas fa-exclamation-triangle me-1"></i>Save failed';
+                    break;
+            }
+        }
+        
+        // Preview post
+        function previewPost() {
+            const postData = collectPostData();
+            
+            if (!postData.title) {
+                alert('Please enter a post title first');
+                return;
+            }
+            
+            // Generate preview HTML
+            const previewHTML = `
+                <article class="blog-post">
+                    <header class="mb-4">
+                        ${postData.featuredImage ? `<img src="${postData.featuredImage}" class="img-fluid rounded mb-3" alt="${postData.title}">` : ''}
+                        <h1>${postData.title}</h1>
+                        <div class="text-muted mb-3">
+                            <i class="fas fa-user me-2"></i>${getCategoryName(postData.category)}
+                            <i class="fas fa-calendar ms-3 me-2"></i>${formatDate(postData.publishDate)}
+                            <i class="fas fa-clock ms-3 me-2"></i>${calculateReadTime(postData.htmlContent)} min read
+                        </div>
+                        ${postData.excerpt ? `<p class="lead">${postData.excerpt}</p>` : ''}
+                        ${postData.tags.length > 0 ? `
+                            <div class="mb-3">
+                                ${postData.tags.map(tag => `<span class="badge bg-primary me-1">${tag}</span>`).join('')}
+                            </div>
+                        ` : ''}
+                    </header>
+                    <div class="blog-content">
+                        ${postData.htmlContent}
+                    </div>
+                </article>
+            `;
+            
+            document.getElementById('previewContainer').innerHTML = previewHTML;
+            
+            // Show modal
+            const modal = new bootstrap.Modal(document.getElementById('previewModal'));
+            modal.show();
+        }
+        
+        // Publish post
+        function publishPost() {
+            const postData = collectPostData();
+            
+            // Validation
+            if (!postData.title) {
+                alert('Please enter a post title');
+                return;
+            }
+            
+            if (!postData.content || quill.getText().trim().length < 100) {
+                alert('Please add more content to your post (minimum 100 characters)');
+                return;
+            }
+            
+            if (!postData.category) {
+                alert('Please select a category');
+                return;
+            }
+            
+            // Set status to published
+            document.getElementById('postStatus').value = 'published';
+            postData.status = 'published';
+            postData.publishedDate = new Date().toISOString();
+            
+            // In a real application, this would send data to your backend
+            console.log('Publishing post:', postData);
+            
+            // Simulate API call
+            setSaveStatus('saving');
+            
+            setTimeout(() => {
+                setSaveStatus('saved');
+                
+                // Show success message
+                showNotification('Post published successfully!', 'success');
+                
+                // Clear draft
+                localStorage.removeItem('draft_post');
+                
+                // Optionally redirect to dashboard
+                // window.location.href = 'dashboard.html';
+            }, 2000);
+        }
+        
+        // Save as draft
+        function saveDraft() {
+            const postData = collectPostData();
+            postData.status = 'draft';
+            
+            setSaveStatus('saving');
+            
+            // Simulate API call
+            setTimeout(() => {
+                setSaveStatus('saved');
+                showNotification('Draft saved successfully!', 'success');
+            }, 1000);
+        }
+        
+        // Schedule post
+        function schedulePost() {
+            const postData = collectPostData();
+            const publishDate = new Date(postData.publishDate);
+            const now = new Date();
+            
+            if (publishDate <= now) {
+                alert('Please select a future date and time for scheduling');
+                return;
+            }
+            
+            postData.status = 'scheduled';
+            
+            setSaveStatus('saving');
+            
+            setTimeout(() => {
+                setSaveStatus('saved');
+                showNotification(`Post scheduled for ${formatDate(postData.publishDate)}`, 'success');
+            }, 1000);
+        }
+        
+        // Toggle fullscreen editor
+        function toggleFullscreen() {
+            const editorContainer = document.querySelector('.form-section:has(#editor)');
+            
+            if (!document.fullscreenElement) {
+                editorContainer.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+        
+        // Load draft from localStorage
+        function loadDraft() {
+            const draft = localStorage.getItem('draft_post');
+            if (!draft) return;
+            
+            try {
+                const postData = JSON.parse(draft);
+                
+                // Populate form fields
+                document.getElementById('postTitle').value = postData.title || '';
+                document.getElementById('postSlug').value = postData.slug || '';
+                document.getElementById('postExcerpt').value = postData.excerpt || '';
+                document.getElementById('postStatus').value = postData.status || 'draft';
+                document.getElementById('postCategory').value = postData.category || 'seo';
+                document.getElementById('postAuthor').value = postData.author || 'john-smith';
+                document.getElementById('publishDate').value = postData.publishDate || '';
+                document.getElementById('featuredPost').checked = postData.featured || false;
+                document.getElementById('metaTitle').value = postData.metaTitle || '';
+                document.getElementById('metaDescription').value = postData.metaDescription || '';
+                document.getElementById('focusKeyword').value = postData.focusKeyword || '';
+                
+                // Load content
+                if (postData.content) {
+                    quill.setContents(postData.content);
+                }
+                
+                // Load featured image
+                if (postData.featuredImage) {
+                    document.getElementById('previewImg').src = postData.featuredImage;
+                    document.getElementById('previewSocialImage').src = postData.featuredImage;
+                    document.getElementById('imagePreview').style.display = 'block';
+                    document.getElementById('uploadPlaceholder').style.display = 'none';
+                    document.getElementById('previewImageContainer').style.display = 'block';
+                }
+                
+                // Load tags
+                tags = postData.tags || [];
+                updateTagDisplay();
+                
+                // Update displays
+                updateWordCount();
+                updateSEO();
+                updatePreview();
+                
+                showNotification('Draft loaded', 'info');
+            } catch (error) {
+                console.error('Error loading draft:', error);
+            }
+        }
+        
+        // Utility functions
+        function getCategoryName(category) {
+            const categories = {
+                'seo': 'SEO',
+                'ppc': 'PPC',
+                'social-media': 'Social Media',
+                'content-marketing': 'Content Marketing',
+                'trends': 'Industry Trends',
+                'email-marketing': 'Email Marketing'
+            };
+            return categories[category] || category;
+        }
+        
+        function formatDate(dateString) {
+            return new Date(dateString).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+        
+        function calculateReadTime(content) {
+            const wordsPerMinute = 200;
+            const words = content.replace(/<[^>]*>/g, '').split(/\s+/).length;
+            return Math.ceil(words / wordsPerMinute);
+        }
+        
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+            notification.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+        
+        function logout() {
+            if (confirm('Are you sure you want to logout? Any unsaved changes will be lost.')) {
+                localStorage.removeItem('admin_token');
+                window.location.href = '../index.html';
+            }
+        }
+        
+        // Load draft on page load
+        window.addEventListener('load', () => {
+            if (confirm('Would you like to load your previous draft?')) {
+                loadDraft();
+            }
+        });
+        
+        // Warn before leaving page with unsaved changes
+        window.addEventListener('beforeunload', (e) => {
+            const hasContent = document.getElementById('postTitle').value || quill.getText().trim();
+            if (hasContent) {
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        });
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                switch (e.key) {
+                    case 's':
+                        e.preventDefault();
+                        autoSave();
+                        break;
+                    case 'p':
+                        e.preventDefault();
+                        previewPost();
+                        break;
+                    case 'Enter':
+                        if (e.shiftKey) {
+                            e.preventDefault();
+                            publishPost();
+                        }
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>ality
+        function startAutoSave() {
+            setInterval(() => {
+                if (document.getElementById('postTitle').value) {
+                    autoSave();
+                }
+            }, 30000); // Auto-save every 30 seconds
+        }<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Post Editor - Create and manage blog content">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <title>Blog Editor - DigitalPro Agency</title>
+    
+    <!-- CSS Files -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.snow.css" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet">
+    
+    <style>
+        .admin-sidebar {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .admin-sidebar .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-sidebar .nav-link:hover,
+        .admin-sidebar .nav-link.active {
+            color: white;
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .admin-content {
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+        
+        .editor-container {
+            background: white;
+            border-radius:

@@ -1,0 +1,339 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "FashionHub E-commerce Transformation",
+      "client": "FashionHub Online Store",
+      "industry": "E-commerce",
+      "services": ["SEO", "Content Marketing", "Technical SEO"],
+      "duration": "6 months",
+      "budget": "$15,000",
+      "featured": true,
+      "image": "assets/images/portfolio/case-study-1.webp",
+      "before_image": "assets/images/portfolio/before-after-1.webp",
+      "after_image": "assets/images/portfolio/case-study-1.webp",
+      "description": "Leading fashion retailer struggling with organic visibility and online sales conversion. We implemented a comprehensive SEO strategy focusing on technical improvements, content optimization, and user experience enhancement.",
+      "challenge": "Poor search rankings, low organic traffic (2,000 monthly visitors), declining online sales, and high bounce rate (78%). The website had technical issues and outdated content strategy.",
+      "solution": [
+        "Comprehensive technical SEO audit and fixes",
+        "Keyword research targeting 500+ fashion-related terms",
+        "Product page optimization for e-commerce",
+        "Content marketing strategy with fashion guides",
+        "Link building campaign with fashion influencers",
+        "Site speed optimization (reduced load time by 60%)",
+        "Mobile-first responsive design improvements"
+      ],
+      "results": {
+        "organic_traffic": {
+          "before": "2,000",
+          "after": "10,000",
+          "increase": "400%"
+        },
+        "revenue": {
+          "before": "$50,000",
+          "after": "$225,000",
+          "increase": "350%"
+        },
+        "keywords_ranking": {
+          "first_page": "87",
+          "top_3": "34",
+          "featured_snippets": "12"
+        },
+        "conversion_rate": {
+          "before": "1.2%",
+          "after": "3.8%",
+          "improvement": "217%"
+        },
+        "bounce_rate": {
+          "before": "78%",
+          "after": "45%",
+          "improvement": "42%"
+        }
+      },
+      "testimonial": {
+        "text": "DigitalPro transformed our online presence completely. Our sales have never been better!",
+        "author": "Sarah Mitchell",
+        "position": "CEO, FashionHub"
+      },
+      "technologies": ["Google Analytics", "Search Console", "Ahrefs", "Screaming Frog"],
+      "date_completed": "2024-12-01",
+      "awards": ["Best E-commerce SEO Campaign 2024"]
+    },
+    {
+      "id": 2,
+      "title": "MedCare Dental Practice Lead Generation",
+      "client": "MedCare Dental Practice",
+      "industry": "Healthcare",
+      "services": ["PPC", "Landing Page Optimization", "Local SEO"],
+      "duration": "3 months",
+      "budget": "$8,500",
+      "featured": true,
+      "image": "assets/images/portfolio/case-study-2.webp",
+      "description": "Growing dental practice needing more qualified leads and appointment bookings through digital marketing.",
+      "challenge": "High cost per lead ($150), low-quality traffic, inefficient ad spend, and poor appointment booking rate (12%). Struggling to compete with established practices in the area.",
+      "solution": [
+        "Google Ads campaign restructure and optimization",
+        "Custom landing pages for different dental services",
+        "Advanced audience targeting and demographic analysis",
+        "Call tracking and conversion optimization",
+        "Local SEO optimization for 'dentist near me' searches",
+        "Review management and reputation building",
+        "A/B testing for ad copy and landing pages"
+      ],
+      "results": {
+        "roi": {
+          "before": "2x",
+          "after": "8x",
+          "improvement": "300%"
+        },
+        "cost_per_lead": {
+          "before": "$150",
+          "after": "$82",
+          "reduction": "45%"
+        },
+        "lead_quality": {
+          "before": "40%",
+          "after": "78%",
+          "improvement": "95%"
+        },
+        "appointment_bookings": {
+          "monthly_increase": "300%",
+          "booking_rate": "68%",
+          "revenue_impact": "$180,000"
+        }
+      },
+      "testimonial": {
+        "text": "The results exceeded our expectations. We're booked solid and growing rapidly.",
+        "author": "Dr. Michael Chen",
+        "position": "Owner, MedCare Dental"
+      },
+      "technologies": ["Google Ads", "Google My Business", "CallRail", "Unbounce"],
+      "date_completed": "2024-11-15"
+    },
+    {
+      "id": 3,
+      "title": "Elite Properties Social Media Dominance",
+      "client": "Elite Properties Group",
+      "industry": "Real Estate",
+      "services": ["Social Media Marketing", "Content Creation", "Influencer Marketing"],
+      "duration": "4 months",
+      "budget": "$12,000",
+      "featured": true,
+      "image": "assets/images/portfolio/before-after-1.webp",
+      "description": "Luxury real estate agency looking to build brand awareness and generate high-quality leads through social media.",
+      "challenge": "Low social media presence (500 followers), minimal engagement (2%), difficulty reaching high-net-worth individuals, and lack of brand recognition in the luxury market.",
+      "solution": [
+        "Premium content strategy with professional photography",
+        "Targeted social media advertising campaigns",
+        "Influencer partnerships with luxury lifestyle influencers",
+        "Video content and virtual property tours",
+        "LinkedIn strategy for B2B networking",
+        "Instagram Stories and Reels for property showcases",
+        "Community building and engagement strategies"
+      ],
+      "results": {
+        "followers": {
+          "before": "500",
+          "after": "50,500",
+          "growth": "10,000%"
+        },
+        "engagement_rate": {
+          "before": "2%",
+          "after": "12%",
+          "increase": "500%"
+        },
+        "lead_generation": {
+          "monthly_leads": "145",
+          "qualified_leads": "78",
+          "conversion_rate": "24%"
+        },
+        "brand_recognition": {
+          "market_share": "35%",
+          "brand_mentions": "400%",
+          "industry_ranking": "#2"
+        }
+      },
+      "testimonial": {
+        "text": "Our social media presence is now our biggest lead generator. Incredible results!",
+        "author": "Jennifer Adams",
+        "position": "Founder, Elite Properties"
+      },
+      "technologies": ["Hootsuite", "Canva", "Later", "Sprout Social"],
+      "date_completed": "2024-10-30"
+    },
+    {
+      "id": 4,
+      "title": "TechFlow SaaS Complete Digital Transformation",
+      "client": "TechFlow SaaS Platform",
+      "industry": "Technology",
+      "services": ["Full-Service Digital Marketing", "SEO", "PPC", "Content Marketing", "Social Media"],
+      "duration": "12 months",
+      "budget": "$45,000",
+      "featured": true,
+      "image": "assets/images/portfolio/before-after-2.webp",
+      "description": "B2B SaaS startup needing comprehensive digital marketing strategy for rapid growth and market penetration.",
+      "challenge": "New startup with zero online presence, limited budget, tight timeline for customer acquisition, and need to compete with established SaaS providers.",
+      "solution": [
+        "Complete digital marketing strategy development",
+        "SEO-optimized website and landing pages",
+        "Targeted PPC campaigns for SaaS keywords",
+        "LinkedIn and B2B social media presence building",
+        "Content marketing with industry thought leadership",
+        "Email marketing and lead nurturing automation",
+        "Partnership and affiliate marketing programs"
+      ],
+      "results": {
+        "website_traffic": {
+          "before": "0",
+          "after": "45,000",
+          "growth": "∞"
+        },
+        "revenue": {
+          "year_1": "$2,000,000",
+          "monthly_recurring": "$180,000",
+          "customer_acquisition": "1,250"
+        },
+        "roi": {
+          "marketing_roi": "15x",
+          "customer_lifetime_value": "$8,500",
+          "payback_period": "4 months"
+        },
+        "market_position": {
+          "industry_ranking": "Top 10",
+          "funding_raised": "$5M Series A",
+          "team_growth": "25 to 85 employees"
+        }
+      },
+      "testimonial": {
+        "text": "DigitalPro didn't just help us grow - they helped us become an industry leader.",
+        "author": "Alex Rodriguez",
+        "position": "CEO, TechFlow"
+      },
+      "technologies": ["HubSpot", "Google Workspace", "Salesforce", "Mailchimp"],
+      "date_completed": "2024-09-01",
+      "awards": ["SaaS Marketing Excellence Award 2024"]
+    },
+    {
+      "id": 5,
+      "title": "Green Energy Solutions Content Authority",
+      "client": "Green Energy Solutions",
+      "industry": "Energy",
+      "services": ["Content Marketing", "SEO", "Thought Leadership"],
+      "duration": "8 months",
+      "budget": "$18,000",
+      "featured": false,
+      "image": "assets/images/portfolio/case-study-1.webp",
+      "description": "Renewable energy company establishing thought leadership and generating B2B leads through content marketing.",
+      "challenge": "Low brand awareness in competitive energy market, difficulty establishing credibility, and limited lead generation from digital channels.",
+      "solution": [
+        "Comprehensive content strategy development",
+        "Industry research reports and whitepapers",
+        "SEO-optimized blog content and case studies",
+        "Webinar series and expert interviews",
+        "LinkedIn thought leadership campaign",
+        "Email newsletter and lead nurturing"
+      ],
+      "results": {
+        "content_performance": {
+          "blog_traffic": "650%",
+          "content_downloads": "2,500",
+          "webinar_attendees": "1,200"
+        },
+        "lead_generation": {
+          "qualified_leads": "300%",
+          "pipeline_value": "$850,000",
+          "conversion_rate": "18%"
+        },
+        "brand_authority": {
+          "industry_mentions": "400%",
+          "speaking_opportunities": "15",
+          "media_coverage": "25 articles"
+        }
+      },
+      "testimonial": {
+        "text": "They positioned us as the go-to experts in renewable energy. Our credibility has skyrocketed.",
+        "author": "David Martinez",
+        "position": "Operations Manager"
+      },
+      "technologies": ["WordPress", "BrightTALK", "Mailchimp", "Google Analytics"],
+      "date_completed": "2024-08-15"
+    },
+    {
+      "id": 6,
+      "title": "Beauty Essentials E-commerce Growth",
+      "client": "Beauty Essentials",
+      "industry": "Beauty & Cosmetics",
+      "services": ["E-commerce SEO", "Product Optimization", "Technical SEO"],
+      "duration": "5 months",
+      "budget": "$11,500",
+      "featured": false,
+      "image": "assets/images/portfolio/case-study-2.webp",
+      "description": "Online beauty retailer looking to improve organic visibility and increase online sales through comprehensive SEO strategy.",
+      "challenge": "Poor product page rankings, low organic traffic, high cart abandonment rate (68%), and strong competition from major beauty brands.",
+      "solution": [
+        "E-commerce SEO audit and optimization",
+        "Product page content enhancement",
+        "Technical SEO improvements",
+        "Category page optimization",
+        "Schema markup implementation",
+        "Site speed and mobile optimization"
+      ],
+      "results": {
+        "organic_performance": {
+          "traffic_increase": "350%",
+          "keyword_rankings": "200+ first page",
+          "featured_snippets": "25"
+        },
+        "sales_metrics": {
+          "revenue_increase": "280%",
+          "conversion_rate": "4.2%",
+          "cart_abandonment": "42%"
+        }
+      },
+      "testimonial": {
+        "text": "Our online sales doubled within 4 months. Outstanding SEO work!",
+        "author": "Lisa Wang",
+        "position": "E-commerce Director"
+      },
+      "technologies": ["Shopify", "SEMrush", "Google Search Console"],
+      "date_completed": "2024-07-20"
+    }
+  ],
+  "summary": {
+    "total_projects": 150,
+    "featured_projects": 4,
+    "industries_served": 12,
+    "average_roi": "8.5x",
+    "total_revenue_generated": "$15.2M",
+    "average_project_duration": "6 months",
+    "client_satisfaction": "98%",
+    "repeat_clients": "85%"
+  },
+  "categories": {
+    "seo": {
+      "name": "SEO",
+      "projects": 45,
+      "avg_traffic_increase": "285%"
+    },
+    "ppc": {
+      "name": "PPC",
+      "projects": 38,
+      "avg_roi": "6.2x"
+    },
+    "social_media": {
+      "name": "Social Media",
+      "projects": 32,
+      "avg_engagement_increase": "340%"
+    },
+    "full_service": {
+      "name": "Full Service",
+      "projects": 25,
+      "avg_revenue_increase": "425%"
+    },
+    "content_marketing": {
+      "name": "Content Marketing",
+      "projects": 28,
+      "avg_lead_increase": "190%"
+    }
+  }
+}

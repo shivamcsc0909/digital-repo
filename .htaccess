@@ -1,0 +1,186 @@
+# .htaccess file for Digital Marketing Agency Website
+# Optimized for performance, security, and SEO
+
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Force HTTPS (SSL/TLS)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Force WWW (optional - remove if you don't want www)
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove trailing slashes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{THE_REQUEST} /+([^?\s]*?)/+(\?.*)?(\s|\?|$)
+RewriteRule ^ /%1%2 [R=301,L]
+
+# Remove .html extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^.]+)$ $1.html [NC,L]
+
+# Redirect .html files to clean URLs
+RewriteCond %{THE_REQUEST} /+([^?\s]*?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NC]
+
+# Security Headers
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always append X-Frame-Options SAMEORIGIN
+    
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options nosniff
+    
+    # Enable XSS filtering
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Strict Transport Security (HSTS)
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    
+    # Content Security Policy (adjust as needed)
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-src https://www.google.com;"
+    
+    # Referrer Policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Feature Policy
+    Header set Feature-Policy "geolocation 'self'; microphone 'none'; camera 'none'"
+</IfModule>
+
+# Gzip Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/ld+json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+    ExpiresActive on
+    
+    # Images
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # CSS and JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    
+    # Fonts
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    
+    # HTML files
+    ExpiresByType text/html "access plus 1 day"
+    
+    # XML files
+    ExpiresByType text/xml "access plus 1 day"
+    ExpiresByType application/xml "access plus 1 day"
+    
+    # Default
+    ExpiresDefault "access plus 1 month"
+</IfModule>
+
+# Cache Control Headers
+<IfModule mod_headers.c>
+    # 1 Year for most static assets
+    <FilesMatch "\.(css|js|pdf|txt|xml|woff|woff2|ttf|svg|ico|jpg|jpeg|png|gif|webp)$">
+        Header set Cache-Control "max-age=31536000, public, immutable"
+    </FilesMatch>
+    
+    # 1 Day for HTML files
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=86400, public"
+    </FilesMatch>
+</IfModule>
+
+# Prevent access to sensitive files
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|bak|backup)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent directory browsing
+Options -Indexes
+
+# Prevent access to hidden files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Custom Error Pages
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+ErrorDocument 500 /500.html
+
+# SEO-friendly redirects for common pages
+Redirect 301 /home /
+Redirect 301 /home.html /
+Redirect 301 /index.php /
+Redirect 301 /contact-us /contact
+Redirect 301 /contact-us.html /contact
+
+# Block bad bots and scrapers
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_USER_AGENT} (ahrefs|semrush|mj12bot|dotbot) [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# Protect wp-config.php (if using WordPress)
+<Files wp-config.php>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Disable server signature
+ServerSignature Off
+
+# Set charset for text files
+AddDefaultCharset UTF-8
+
+# MIME Types for modern file formats
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType application/font-woff .woff
+    AddType application/font-woff2 .woff2
+    AddType application/json .json
+    AddType application/ld+json .jsonld
+</IfModule>
+
+# Enable Keep-Alive connections
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+</IfModule>
+
+# Optimize ETags
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+# Prevent image hotlinking (optional)
+# RewriteCond %{HTTP_REFERER} !^$
+# RewriteCond %{HTTP_REFERER} !^https?://(www\.)?yourwebsite\.com [NC]
+# RewriteRule \.(jpg|jpeg|png|gif|webp|svg)$ - [NC,F,L]

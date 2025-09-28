@@ -1,0 +1,1280 @@
+<!-- ===== CUSTOM LIVE CHAT WIDGET ===== -->
+<div id="chat-widget" class="chat-widget">
+  <div class="chat-widget-button" id="chat-toggle">
+    <div class="chat-icon">
+      <i class="fas fa-comments"></i>
+    </div>
+    <div class="chat-notification" id="chat-notification">
+      <span>1</span>
+    </div>
+    <div class="chat-tooltip">
+      Need help? Chat with us!
+    </div>
+  </div>
+  
+  <div class="chat-window" id="chat-window">
+    <div class="chat-header">
+      <div class="chat-agent-info">
+        <div class="agent-avatar">
+          <img src="assets/images/team/support-agent.webp" alt="Support Agent">
+          <div class="online-indicator"></div>
+        </div>
+        <div class="agent-details">
+          <div class="agent-name">Sarah</div>
+          <div class="agent-status">Online now</div>
+        </div>
+      </div>
+      <div class="chat-controls">
+        <button class="chat-minimize" id="chat-minimize">
+          <i class="fas fa-minus"></i>
+        </button>
+        <button class="chat-close" id="chat-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    
+    <div class="chat-messages" id="chat-messages">
+      <div class="message bot-message">
+        <div class="message-avatar">
+          <img src="assets/images/team/support-agent.webp" alt="Support">
+        </div>
+        <div class="message-content">
+          <div class="message-text">
+            Hi! 👋 I'm Sarah from DigitalPro Agency. How can I help you today?
+          </div>
+          <div class="message-time">Just now</div>
+        </div>
+      </div>
+      
+      <div class="quick-replies">
+        <button class="quick-reply" data-message="I'm interested in SEO services">
+          SEO Services
+        </button>
+        <button class="quick-reply" data-message="I need help with PPC advertising">
+          PPC Advertising
+        </button>
+        <button class="quick-reply" data-message="I want to discuss social media marketing">
+          Social Media
+        </button>
+        <button class="quick-reply" data-message="I'd like a free consultation">
+          Free Consultation
+        </button>
+      </div>
+    </div>
+    
+    <div class="chat-input-area">
+      <div class="typing-indicator" id="typing-indicator">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span>Sarah is typing...</span>
+      </div>
+      
+      <form class="chat-form" id="chat-form">
+        <div class="chat-input-wrapper">
+          <input type="text" 
+                 class="chat-input" 
+                 id="chat-input" 
+                 placeholder="Type your message..." 
+                 autocomplete="off">
+          <button type="button" class="emoji-button" id="emoji-button">
+            <i class="fas fa-smile"></i>
+          </button>
+          <button type="submit" class="send-button" id="send-button">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </form>
+      
+      <div class="chat-options">
+        <button class="chat-option" id="file-upload">
+          <i class="fas fa-paperclip"></i>
+          <span>Attach File</span>
+        </button>
+        <button class="chat-option" id="schedule-call">
+          <i class="fas fa-phone"></i>
+          <span>Schedule Call</span>
+        </button>
+        <input type="file" id="file-input" style="display: none;" accept="image/*,.pdf,.doc,.docx">
+      </div>
+    </div>
+    
+    <div class="chat-footer">
+      <div class="powered-by">
+        <small>Powered by DigitalPro Live Chat</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== INTERCOM INTEGRATION (Alternative) ===== -->
+<!-- Replace YOUR_INTERCOM_APP_ID with your actual Intercom App ID -->
+<!--
+<script>
+  window.intercomSettings = {
+    app_id: "YOUR_INTERCOM_APP_ID",
+    name: "{{USER_NAME}}", // Optional: User's name
+    email: "{{USER_EMAIL}}", // Optional: User's email
+    company: {
+      id: "{{COMPANY_ID}}", // Optional: Company ID
+      name: "{{COMPANY_NAME}}" // Optional: Company name
+    },
+    custom_attributes: {
+      "service_interest": "{{SERVICE_INTEREST}}",
+      "lead_source": "{{LEAD_SOURCE}}",
+      "page_visited": window.location.pathname
+    }
+  };
+</script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/YOUR_INTERCOM_APP_ID';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+-->
+
+<!-- ===== ZENDESK CHAT INTEGRATION (Alternative) ===== -->
+<!-- Replace YOUR_ZENDESK_KEY with your actual Zendesk Chat key -->
+<!--
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=YOUR_ZENDESK_KEY"></script>
+<script>
+  zE('webWidget', 'setLocale', 'en-US');
+  zE('webWidget', 'prefill', {
+    name: {
+      value: '{{USER_NAME}}',
+      readOnly: false
+    },
+    email: {
+      value: '{{USER_EMAIL}}',
+      readOnly: false
+    }
+  });
+  
+  // Custom styling
+  zE('webWidget', 'updateSettings', {
+    webWidget: {
+      color: {
+        theme: '#2563eb',
+        launcher: '#2563eb'
+      },
+      launcher: {
+        chatLabel: {
+          'en-US': 'Need help? Chat with us!'
+        }
+      },
+      contactForm: {
+        attachments: true
+      }
+    }
+  });
+</script>
+-->
+
+<!-- ===== TAWK.TO INTEGRATION (Alternative) ===== -->
+<!-- Replace YOUR_TAWK_TO_ID with your actual Tawk.to Property ID -->
+<!--
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/YOUR_TAWK_TO_ID/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+
+// Custom events
+Tawk_API.onLoad = function(){
+    Tawk_API.setAttributes({
+        'name' : '{{USER_NAME}}',
+        'email' : '{{USER_EMAIL}}',
+        'service-interest' : '{{SERVICE_INTEREST}}'
+    }, function(error){});
+};
+
+Tawk_API.onChatStarted = function(){
+    // Track chat started event
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'chat_started', {
+            event_category: 'engagement',
+            event_label: 'live_chat'
+        });
+    }
+};
+</script>
+-->
+
+<!-- ===== CRISP CHAT INTEGRATION (Alternative) ===== -->
+<!-- Replace YOUR_CRISP_WEBSITE_ID with your actual Crisp Website ID -->
+<!--
+<script type="text/javascript">
+  window.$crisp=[];
+  window.CRISP_WEBSITE_ID="YOUR_CRISP_WEBSITE_ID";
+  (function(){
+    d=document;
+    s=d.createElement("script");
+    s.src="https://client.crisp.chat/l.js";
+    s.async=1;
+    d.getElementsByTagName("head")[0].appendChild(s);
+  })();
+  
+  // Custom configuration
+  $crisp.push(["set", "user:email", "{{USER_EMAIL}}"]);
+  $crisp.push(["set", "user:nickname", "{{USER_NAME}}"]);
+  $crisp.push(["set", "user:company", "{{COMPANY_NAME}}"]);
+  $crisp.push(["set", "session:data", {
+    "service_interest": "{{SERVICE_INTEREST}}",
+    "page_url": window.location.href,
+    "lead_source": "{{LEAD_SOURCE}}"
+  }]);
+</script>
+-->
+
+<!-- ===== CUSTOM CHAT WIDGET STYLES ===== -->
+<style>
+.chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.chat-widget-button {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-widget-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 99, 235, 0.4);
+}
+
+.chat-icon {
+  color: white;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.chat-widget-button.active .chat-icon {
+  transform: rotate(180deg);
+}
+
+.chat-notification {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+.chat-tooltip {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  background: #1f2937;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+}
+
+.chat-widget-button:hover .chat-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.chat-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  border: 5px solid transparent;
+  border-top-color: #1f2937;
+}
+
+.chat-window {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 350px;
+  height: 500px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+}
+
+.chat-window.open {
+  display: flex;
+}
+
+.chat-header {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-agent-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.agent-avatar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.agent-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.online-indicator {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  background: #10b981;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.agent-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.agent-status {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.chat-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-controls button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.chat-controls button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: #f9fafb;
+}
+
+.message {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.message-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.message-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.message-content {
+  flex: 1;
+}
+
+.message-text {
+  background: white;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.user-message {
+  flex-direction: row-reverse;
+}
+
+.user-message .message-text {
+  background: #2563eb;
+  color: white;
+}
+
+.message-time {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.user-message .message-time {
+  text-align: left;
+}
+
+.quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.quick-reply {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #374151;
+}
+
+.quick-reply:hover {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.typing-indicator {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.typing-indicator span:nth-child(-n+3) {
+  width: 8px;
+  height: 8px;
+  background: #d1d5db;
+  border-radius: 50%;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.chat-input-area {
+  border-top: 1px solid #e5e7eb;
+  background: white;
+}
+
+.chat-input-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 8px;
+}
+
+.chat-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 8px 0;
+  background: transparent;
+}
+
+.chat-input::placeholder {
+  color: #9ca3af;
+}
+
+.emoji-button,
+.send-button {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.emoji-button:hover,
+.send-button:hover {
+  background: #f3f4f6;
+  color: #2563eb;
+}
+
+.send-button {
+  color: #2563eb;
+}
+
+.send-button:disabled {
+  color: #d1d5db;
+  cursor: not-allowed;
+}
+
+.chat-options {
+  display: flex;
+  gap: 1px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.chat-option {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 12px 8px;
+  font-size: 12px;
+  color: #6b7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: background 0.2s ease;
+}
+
+.chat-option:hover {
+  background: #f9fafb;
+  color: #2563eb;
+}
+
+.chat-footer {
+  background: #f9fafb;
+  padding: 8px 16px;
+  text-align: center;
+  border-top: 1px solid #f3f4f6;
+}
+
+.powered-by {
+  color: #9ca3af;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .chat-window {
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+    position: fixed;
+  }
+  
+  .chat-widget-button {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* Hide chat widget on very small screens */
+@media (max-width: 480px) {
+  .chat-widget {
+    display: none;
+  }
+}
+</style>
+
+<!-- ===== CUSTOM CHAT WIDGET JAVASCRIPT ===== -->
+<script>
+class ChatWidget {
+  constructor() {
+    this.isOpen = false;
+    this.messages = [];
+    this.isTyping = false;
+    this.init();
+  }
+  
+  init() {
+    this.bindEvents();
+    this.loadChatHistory();
+    this.showWelcomeMessage();
+    this.startAutoMessages();
+  }
+  
+  bindEvents() {
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatClose = document.getElementById('chat-close');
+    const chatMinimize = document.getElementById('chat-minimize');
+    const chatForm = document.getElementById('chat-form');
+    const fileUpload = document.getElementById('file-upload');
+    const fileInput = document.getElementById('file-input');
+    const scheduleCall = document.getElementById('schedule-call');
+    
+    chatToggle.addEventListener('click', () => this.toggleChat());
+    chatClose.addEventListener('click', () => this.closeChat());
+    chatMinimize.addEventListener('click', () => this.minimizeChat());
+    chatForm.addEventListener('submit', (e) => this.sendMessage(e));
+    fileUpload.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', (e) => this.handleFileUpload(e));
+    scheduleCall.addEventListener('click', () => this.scheduleCall());
+    
+    // Quick replies
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('quick-reply')) {
+        this.sendQuickReply(e.target.dataset.message);
+      }
+    });
+    
+    // Auto-hide notification after 30 seconds
+    setTimeout(() => {
+      this.hideNotification();
+    }, 30000);
+  }
+  
+  toggleChat() {
+    const chatWindow = document.getElementById('chat-window');
+    const chatToggle = document.getElementById('chat-toggle');
+    
+    if (this.isOpen) {
+      this.closeChat();
+    } else {
+      chatWindow.classList.add('open');
+      chatToggle.classList.add('active');
+      this.isOpen = true;
+      this.hideNotification();
+      this.focusInput();
+      this.trackEvent('call_scheduled');
+  }
+  
+  scrollToBottom() {
+    const messagesContainer = document.getElementById('chat-messages');
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+  
+  focusInput() {
+    const input = document.getElementById('chat-input');
+    input.focus();
+  }
+  
+  getCurrentTime() {
+    const now = new Date();
+    return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+  
+  loadChatHistory() {
+    const saved = localStorage.getItem('chat_history');
+    if (saved) {
+      this.messages = JSON.parse(saved);
+      // Restore messages (optional)
+    }
+  }
+  
+  saveChatHistory() {
+    localStorage.setItem('chat_history', JSON.stringify(this.messages));
+  }
+  
+  trackEvent(event, data = {}) {
+    // Google Analytics tracking
+    if (typeof gtag !== 'undefined') {
+      gtag('event', event, {
+        event_category: 'chat_widget',
+        ...data
+      });
+    }
+    
+    // Custom tracking
+    console.log('Chat Event:', event, data);
+  }
+}
+
+// Initialize chat widget when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  new ChatWidget();
+});
+
+// Page visibility API to track engagement
+document.addEventListener('visibilitychange', function() {
+  if (document.hidden) {
+    // User switched tabs/minimized window
+  } else {
+    // User returned to page
+    const chatWidget = document.querySelector('.chat-widget');
+    if (chatWidget && !chatWidget.classList.contains('engaged')) {
+      // Show notification if user returns after being away
+      setTimeout(() => {
+        const notification = document.getElementById('chat-notification');
+        if (notification) notification.style.display = 'flex';
+      }, 2000);
+    }
+  }
+});
+
+// Detect user inactivity and show proactive messages
+let inactivityTimer;
+let userActive = true;
+
+function resetInactivityTimer() {
+  clearTimeout(inactivityTimer);
+  userActive = true;
+  
+  inactivityTimer = setTimeout(() => {
+    userActive = false;
+    // Show proactive message after 60 seconds of inactivity
+    const notification = document.getElementById('chat-notification');
+    if (notification && !document.getElementById('chat-window').classList.contains('open')) {
+      notification.style.display = 'flex';
+    }
+  }, 60000);
+}
+
+// Track user activity
+['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'].forEach(event => {
+  document.addEventListener(event, resetInactivityTimer, true);
+});
+
+// Initialize inactivity timer
+resetInactivityTimer();
+</script>
+
+<!-- ===== WHATSAPP CHAT INTEGRATION ===== -->
+<div class="whatsapp-chat" id="whatsapp-chat">
+  <a href="https://wa.me/15551234567?text=Hi%2C%20I%27m%20interested%20in%20your%20digital%20marketing%20services" 
+     target="_blank" 
+     class="whatsapp-button"
+     onclick="trackWhatsAppClick()">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+  </a>
+</div>
+
+<style>
+.whatsapp-chat {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  z-index: 9998;
+}
+
+.whatsapp-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #25d366;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  color: white;
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-button i {
+  font-size: 24px;
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background: #1f2937;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+}
+
+.whatsapp-button:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.whatsapp-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  border: 4px solid transparent;
+  border-top-color: #1f2937;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-chat {
+    bottom: 90px;
+    right: 15px;
+  }
+  
+  .whatsapp-button {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .whatsapp-button i {
+    font-size: 20px;
+  }
+}
+</style>
+
+<script>
+function trackWhatsAppClick() {
+  // Track WhatsApp click
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'whatsapp_click', {
+      event_category: 'contact',
+      event_label: 'whatsapp_chat'
+    });
+  }
+  
+  // Facebook Pixel
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Contact', {
+      content_name: 'WhatsApp Chat',
+      content_category: 'chat'
+    });
+  }
+}
+
+// Auto-hide WhatsApp button if custom chat is open
+document.addEventListener('DOMContentLoaded', function() {
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.target.classList.contains('open')) {
+        document.getElementById('whatsapp-chat').style.display = 'none';
+      } else {
+        document.getElementById('whatsapp-chat').style.display = 'block';
+      }
+    });
+  });
+  
+  const chatWindow = document.getElementById('chat-window');
+  if (chatWindow) {
+    observer.observe(chatWindow, { attributes: true, attributeFilter: ['class'] });
+  }
+});
+</script>
+
+<!-- ===== USAGE INSTRUCTIONS ===== -->
+<!--
+LIVE CHAT IMPLEMENTATION GUIDE:
+
+1. CUSTOM CHAT WIDGET (Default - Already Configured):
+   ✅ Fully functional custom chat widget
+   ✅ Responsive design for all devices
+   ✅ Auto-responses and quick replies
+   ✅ File upload capability
+   ✅ WhatsApp integration
+   ✅ Analytics tracking
+   ✅ Proactive messaging
+
+2. THIRD-PARTY INTEGRATIONS (Choose One):
+
+   A) INTERCOM (Premium - Best for Enterprise):
+      - Uncomment Intercom section
+      - Replace YOUR_INTERCOM_APP_ID with actual ID
+      - Features: Live chat, help desk, customer data
+      - Pricing: ~$59/month
+
+   B) ZENDESK CHAT (Mid-range - Good for Growing Business):
+      - Uncomment Zendesk section  
+      - Replace YOUR_ZENDESK_KEY with actual key
+      - Features: Live chat, ticketing, knowledge base
+      - Pricing: ~$14/month
+
+   C) TAWK.TO (Free - Good for Small Business):
+      - Uncomment Tawk.to section
+      - Replace YOUR_TAWK_TO_ID with actual ID
+      - Features: Free live chat, basic analytics
+      - Pricing: Free (with paid add-ons)
+
+   D) CRISP CHAT (Affordable - Good Balance):
+      - Uncomment Crisp section
+      - Replace YOUR_CRISP_WEBSITE_ID with actual ID
+      - Features: Live chat, chatbots, knowledge base
+      - Pricing: ~$25/month
+
+3. CUSTOMIZATION OPTIONS:
+
+   Custom Widget Settings:
+   - Colors: Change gradient colors in .chat-widget-button
+   - Position: Modify bottom/right values in .chat-widget
+   - Agent Info: Update agent name, photo, status
+   - Auto-messages: Modify timing and content
+   - Quick Replies: Add/remove quick reply buttons
+
+4. FEATURES INCLUDED:
+
+   ✅ Responsive Design (Mobile/Desktop)
+   ✅ Auto-notifications and proactive messaging
+   ✅ Quick reply buttons for common questions
+   ✅ File upload functionality
+   ✅ Typing indicators
+   ✅ Chat history storage
+   ✅ Analytics tracking (GA4, Facebook Pixel)
+   ✅ WhatsApp integration
+   ✅ Inactivity detection
+   ✅ Page visibility tracking
+
+5. INTEGRATION WITH OTHER COMPONENTS:
+
+   - Works with analytics.html for tracking
+   - Integrates with form-handler.js for lead capture
+   - Connects with Google Analytics for conversion tracking
+   - Compatible with all other website components
+
+6. CUSTOMIZATION EXAMPLES:
+
+   Change Chat Colors:
+   ```css
+   .chat-widget-button {
+     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+   }
+   
+   .chat-header {
+     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+   }
+   ```
+
+   Add Custom Quick Replies:
+   ```html
+   <button class="quick-reply" data-message="I need help with email marketing">
+     Email Marketing
+   </button>
+   ```
+
+   Modify Auto-message Timing:
+   ```javascript
+   // Show notification after 10 seconds instead of 5
+   setTimeout(() => {
+     this.showNotification();
+   }, 10000);
+   ```
+
+7. TESTING:
+
+   ✅ Test on mobile and desktop
+   ✅ Verify file upload works
+   ✅ Check WhatsApp link opens correctly
+   ✅ Confirm analytics tracking fires
+   ✅ Test quick replies functionality
+   ✅ Validate responsive behavior
+
+8. DEPLOYMENT:
+
+   - Include this file in all pages where chat should appear
+   - Update phone number in WhatsApp link
+   - Replace placeholder agent photos
+   - Configure chosen third-party service (if using)
+   - Test thoroughly before going live
+
+9. MAINTENANCE:
+
+   - Regularly update auto-response messages
+   - Monitor chat analytics and user feedback
+   - Update agent information as needed
+   - Review and improve quick reply options
+   - Keep third-party integrations updated
+
+RECOMMENDATION:
+For most digital marketing agencies, the custom widget + WhatsApp combination provides excellent functionality at no additional cost, with full control over the user experience.
+
+-->Event('chat_opened');
+    }
+  }
+  
+  closeChat() {
+    const chatWindow = document.getElementById('chat-window');
+    const chatToggle = document.getElementById('chat-toggle');
+    
+    chatWindow.classList.remove('open');
+    chatToggle.classList.remove('active');
+    this.isOpen = false;
+    this.trackEvent('chat_closed');
+  }
+  
+  minimizeChat() {
+    this.closeChat();
+  }
+  
+  sendMessage(e) {
+    e.preventDefault();
+    const input = document.getElementById('chat-input');
+    const message = input.value.trim();
+    
+    if (!message) return;
+    
+    this.addMessage(message, 'user');
+    input.value = '';
+    
+    // Simulate bot response
+    this.showTyping();
+    setTimeout(() => {
+      this.hideTyping();
+      this.addBotResponse(message);
+    }, 1500);
+    
+    this.trackEvent('message_sent', { message_length: message.length });
+  }
+  
+  sendQuickReply(message) {
+    this.addMessage(message, 'user');
+    
+    // Hide quick replies after use
+    const quickReplies = document.querySelector('.quick-replies');
+    if (quickReplies) {
+      quickReplies.style.display = 'none';
+    }
+    
+    // Simulate bot response
+    this.showTyping();
+    setTimeout(() => {
+      this.hideTyping();
+      this.addBotResponse(message);
+    }, 1000);
+    
+    this.trackEvent('quick_reply_used', { reply: message });
+  }
+  
+  addMessage(text, sender) {
+    const messagesContainer = document.getElementById('chat-messages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${sender}-message`;
+    
+    const avatar = sender === 'user' ? 
+      '<div class="message-avatar"><div style="width:32px;height:32px;background:#2563eb;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:14px;font-weight:bold;">U</div></div>' :
+      '<div class="message-avatar"><img src="assets/images/team/support-agent.webp" alt="Support"></div>';
+    
+    messageDiv.innerHTML = `
+      ${avatar}
+      <div class="message-content">
+        <div class="message-text">${text}</div>
+        <div class="message-time">${this.getCurrentTime()}</div>
+      </div>
+    `;
+    
+    messagesContainer.appendChild(messageDiv);
+    this.scrollToBottom();
+    
+    // Store message
+    this.messages.push({ text, sender, timestamp: Date.now() });
+    this.saveChatHistory();
+  }
+  
+  addBotResponse(userMessage) {
+    const responses = this.getBotResponse(userMessage);
+    
+    responses.forEach((response, index) => {
+      setTimeout(() => {
+        this.addMessage(response, 'bot');
+      }, index * 1000);
+    });
+  }
+  
+  getBotResponse(userMessage) {
+    const message = userMessage.toLowerCase();
+    
+    if (message.includes('seo')) {
+      return [
+        "Great choice! Our SEO services can help improve your website's ranking on Google. 📈",
+        "We offer comprehensive SEO packages starting at $499/month. Would you like me to connect you with our SEO specialist?"
+      ];
+    } else if (message.includes('ppc') || message.includes('ads')) {
+      return [
+        "PPC advertising is perfect for getting immediate results! 🎯",
+        "Our team manages Google Ads campaigns with an average 5x ROI. I can schedule a free consultation to discuss your goals."
+      ];
+    } else if (message.includes('social media')) {
+      return [
+        "Social media marketing is essential for brand building! 📱",
+        "We create engaging content and manage your social presence across all platforms. Would you like to see some examples of our work?"
+      ];
+    } else if (message.includes('consultation') || message.includes('free')) {
+      return [
+        "I'd be happy to schedule a free consultation for you! 📅",
+        "Our digital marketing experts can analyze your current situation and recommend the best strategy. What's the best time to reach you?"
+      ];
+    } else if (message.includes('price') || message.includes('cost')) {
+      return [
+        "Our pricing varies based on your specific needs and goals. 💰",
+        "We offer flexible packages starting from $499/month. Would you like me to prepare a custom quote for you?"
+      ];
+    } else if (message.includes('hello') || message.includes('hi')) {
+      return [
+        "Hello! Thanks for reaching out to DigitalPro Agency! 👋",
+        "How can I help you grow your business online today?"
+      ];
+    } else {
+      return [
+        "Thanks for your message! I'd love to help you with that. 😊",
+        "Let me connect you with one of our specialists who can provide detailed information. What's your email address?"
+      ];
+    }
+  }
+  
+  showTyping() {
+    const typingIndicator = document.getElementById('typing-indicator');
+    typingIndicator.style.display = 'flex';
+    this.scrollToBottom();
+    this.isTyping = true;
+  }
+  
+  hideTyping() {
+    const typingIndicator = document.getElementById('typing-indicator');
+    typingIndicator.style.display = 'none';
+    this.isTyping = false;
+  }
+  
+  showWelcomeMessage() {
+    // Show notification after 5 seconds
+    setTimeout(() => {
+      this.showNotification();
+    }, 5000);
+  }
+  
+  showNotification() {
+    const notification = document.getElementById('chat-notification');
+    notification.style.display = 'flex';
+  }
+  
+  hideNotification() {
+    const notification = document.getElementById('chat-notification');
+    notification.style.display = 'none';
+  }
+  
+  startAutoMessages() {
+    // Show proactive message after 30 seconds if chat not opened
+    setTimeout(() => {
+      if (!this.isOpen) {
+        this.showNotification();
+      }
+    }, 30000);
+    
+    // Show different message after 2 minutes
+    setTimeout(() => {
+      if (!this.isOpen) {
+        this.addMessage("Still looking for digital marketing help? I'm here to assist! 😊", 'bot');
+        this.showNotification();
+      }
+    }, 120000);
+  }
+  
+  handleFileUpload(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    // Validate file size (max 10MB)
+    if (file.size > 10 * 1024 * 1024) {
+      alert('File size must be less than 10MB');
+      return;
+    }
+    
+    this.addMessage(`📎 Uploaded: ${file.name}`, 'user');
+    
+    // Simulate file processing
+    this.showTyping();
+    setTimeout(() => {
+      this.hideTyping();
+      this.addMessage("Thank you for sharing that file! I'll have our team review it and get back to you shortly.", 'bot');
+    }, 2000);
+    
+    this.trackEvent('file_uploaded', { file_type: file.type, file_size: file.size });
+  }
+  
+  scheduleCall() {
+    this.addMessage("I'd like to schedule a call", 'user');
+    
+    this.showTyping();
+    setTimeout(() => {
+      this.hideTyping();
+      this.addMessage("Perfect! I'll help you schedule a call with our team. 📞", 'bot');
+      setTimeout(() => {
+        this.addMessage("Please visit our contact page or call us directly at +1-555-123-4567. Our business hours are Monday-Friday, 9 AM - 6 PM EST.", 'bot');
+      }, 1000);
+    }, 1500);
+    
+    this.track

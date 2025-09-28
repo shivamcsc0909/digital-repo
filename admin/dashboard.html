@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DigitalPro Agency Admin Dashboard - Manage your website content and analytics">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <title>Admin Dashboard - DigitalPro Agency</title>
+    
+    <!-- CSS Files -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.css" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet">
+    
+    <style>
+        .admin-sidebar {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .admin-sidebar .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-sidebar .nav-link:hover,
+        .admin-sidebar .nav-link.active {
+            color: white;
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .admin-content {
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #3b82f6;
+            transition: transform 0.2s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        
+        .stat-label {
+            color: #64748b;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .stat-change {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .stat-change.positive {
+            color: #10b981;
+        }
+        
+        .stat-change.negative {
+            color: #ef4444;
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quick-actions .btn {
+            border-radius: 8px;
+            font-weight: 500;
+            padding: 12px 20px;
+        }
+        
+        .recent-activity {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .activity-item {
+            padding: 16px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        
+        .activity-icon.new-message {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+        }
+        
+        .activity-icon.new-subscriber {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+        
+        .activity-icon.blog-post {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+        
+        .admin-header {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 16px 0;
+        }
+        
+        .admin-user {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #475569;
+        }
+        
+        .admin-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #3b82f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 admin-sidebar p-3">
+                <div class="d-flex align-items-center mb-4">
+                    <h4 class="mb-0">
+                        <i class="fas fa-shield-alt me-2"></i>
+                        Admin Panel
+                    </h4>
+                </div>
+                
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="dashboard.html">
+                        <i class="fas fa-tachometer-alt me-2"></i>
+                        Dashboard
+                    </a>
+                    <a class="nav-link" href="blog-editor.html">
+                        <i class="fas fa-edit me-2"></i>
+                        Blog Editor
+                    </a>
+                    <a class="nav-link" href="contact-messages.html">
+                        <i class="fas fa-envelope me-2"></i>
+                        Messages
+                        <span class="badge bg-danger ms-2">3</span>
+                    </a>
+                    <a class="nav-link" href="#" onclick="toggleSubmenu('content')">
+                        <i class="fas fa-file-alt me-2"></i>
+                        Content
+                        <i class="fas fa-chevron-down ms-auto"></i>
+                    </a>
+                    <div class="submenu ms-3" id="content-submenu" style="display: none;">
+                        <a class="nav-link" href="#">Pages</a>
+                        <a class="nav-link" href="#">Media</a>
+                        <a class="nav-link" href="#">SEO Settings</a>
+                    </div>
+                    <a class="nav-link" href="#" onclick="toggleSubmenu('analytics')">
+                        <i class="fas fa-chart-bar me-2"></i>
+                        Analytics
+                        <i class="fas fa-chevron-down ms-auto"></i>
+                    </a>
+                    <div class="submenu ms-3" id="analytics-submenu" style="display: none;">
+                        <a class="nav-link" href="#">Traffic</a>
+                        <a class="nav-link" href="#">Conversions</a>
+                        <a class="nav-link" href="#">Reports</a>
+                    </div>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-users me-2"></i>
+                        Users
+                    </a>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog me-2"></i>
+                        Settings
+                    </a>
+                    <hr class="my-3" style="border-color: rgba(255,255,255,0.2);">
+                    <a class="nav-link" href="../index.html">
+                        <i class="fas fa-arrow-left me-2"></i>
+                        Back to Website
+                    </a>
+                    <a class="nav-link text-danger" href="#" onclick="logout()">
+                        <i class="fas fa-sign-out-alt me-2"></i>
+                        Logout
+                    </a>
+                </nav>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10 admin-content p-0">
+                <!-- Header -->
+                <div class="admin-header">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h1 class="h3 mb-0">Dashboard</h1>
+                                <p class="text-muted mb-0">Welcome back, Admin!</p>
+                            </div>
+                            <div class="admin-user">
+                                <div class="admin-avatar">A</div>
+                                <span>Admin User</span>
+                                <div class="dropdown ms-2">
+                                    <button class="btn btn-sm" type="button" data-bs-toggle="dropdown">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item text-danger" href="#" onclick="logout()">Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dashboard Content -->
+                <div class="container-fluid px-4 py-4">
+                    <!-- Quick Stats -->
+                    <div class="row mb-4">
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <div>
+                                        <div class="stat-number" id="totalVisitors">12,458</div>
+                                        <div class="stat-label">Total Visitors</div>
+                                    </div>
+                                    <i class="fas fa-users text-primary fa-lg"></i>
+                                </div>
+                                <div class="stat-change positive">
+                                    <i class="fas fa-arrow-up me-1"></i>
+                                    +12.5% from last month
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <div>
+                                        <div class="stat-number" id="totalLeads">1,247</div>
+                                        <div class="stat-label">Total Leads</div>
+                                    </div>
+                                    <i class="fas fa-envelope text-success fa-lg"></i>
+                                </div>
+                                <div class="stat-change positive">
+                                    <i class="fas fa-arrow-up me-1"></i>
+                                    +8.2% from last month
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <div>
+                                        <div class="stat-number" id="conversionRate">3.24%</div>
+                                        <div class="stat-label">Conversion Rate</div>
+                                    </div>
+                                    <i class="fas fa-chart-line text-warning fa-lg"></i>
+                                </div>
+                                <div class="stat-change negative">
+                                    <i class="fas fa-arrow-down me-1"></i>
+                                    -2.1% from last month
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <div>
+                                        <div class="stat-number" id="blogPosts">42</div>
+                                        <div class="stat-label">Blog Posts</div>
+                                    </div>
+                                    <i class="fas fa-blog text-info fa-lg"></i>
+                                </div>
+                                <div class="stat-change positive">
+                                    <i class="fas fa-arrow-up me-1"></i>
+                                    +3 this month
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Charts Row -->
+                    <div class="row mb-4">
+                        <div class="col-lg-8 mb-4">
+                            <div class="chart-container">
+                                <h5 class="mb-4">Website Traffic Overview</h5>
+                                <canvas id="trafficChart" height="100"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 mb-4">
+                            <div class="chart-container">
+                                <h5 class="mb-4">Traffic Sources</h5>
+                                <canvas id="sourceChart" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Actions & Recent Activity -->
+                    <div class="row mb-4">
+                        <div class="col-lg-6 mb-4">
+                            <div class="chart-container">
+                                <h5 class="mb-4">Quick Actions</h5>
+                                <div class="quick-actions d-grid gap-2">
+                                    <a href="blog-editor.html" class="btn btn-primary">
+                                        <i class="fas fa-plus me-2"></i>
+                                        New Blog Post
+                                    </a>
+                                    <button class="btn btn-success" onclick="exportData()">
+                                        <i class="fas fa-download me-2"></i>
+                                        Export Analytics
+                                    </button>
+                                    <button class="btn btn-warning" onclick="backupWebsite()">
+                                        <i class="fas fa-shield-alt me-2"></i>
+                                        Backup Website
+                                    </button>
+                                    <a href="contact-messages.html" class="btn btn-info">
+                                        <i class="fas fa-envelope me-2"></i>
+                                        View Messages
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-4">
+                            <div class="recent-activity">
+                                <div class="p-3 border-bottom">
+                                    <h5 class="mb-0">Recent Activity</h5>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon new-message">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="fw-medium">New contact message</div>
+                                        <div class="text-muted small">From john@example.com</div>
+                                        <div class="text-muted small">2 minutes ago</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon new-subscriber">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="fw-medium">New newsletter subscriber</div>
+                                        <div class="text-muted small">sarah@company.com joined</div>
+                                        <div class="text-muted small">15 minutes ago</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon blog-post">
+                                        <i class="fas fa-edit"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="fw-medium">Blog post published</div>
+                                        <div class="text-muted small">"SEO Tips for 2025" is live</div>
+                                        <div class="text-muted small">1 hour ago</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon new-message">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="fw-medium">Quote request</div>
+                                        <div class="text-muted small">TechCorp needs PPC services</div>
+                                        <div class="text-muted small">3 hours ago</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="p-3 text-center border-top">
+                                    <a href="#" class="text-decoration-none">View all activity</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Blog Posts -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="chart-container">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h5 class="mb-0">Recent Blog Posts</h5>
+                                    <a href="blog-editor.html" class="btn btn-sm btn-primary">
+                                        <i class="fas fa-plus me-1"></i>
+                                        New Post
+                                    </a>
+                                </div>
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Title</th>
+                                                <th>Status</th>
+                                                <th>Category</th>
+                                                <th>Views</th>
+                                                <th>Published</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="recentPosts">
+                                            <tr>
+                                                <td>
+                                                    <div class="fw-medium">How to Rank on Google in 2025</div>
+                                                    <div class="text-muted small">Complete SEO guide for businesses</div>
+                                                </td>
+                                                <td><span class="badge bg-success">Published</span></td>
+                                                <td>SEO</td>
+                                                <td>1,247</td>
+                                                <td>Jan 15, 2025</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-primary me-1">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-danger">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="fw-medium">Social Media Marketing Tips</div>
+                                                    <div class="text-muted small">10 proven strategies for engagement</div>
+                                                </td>
+                                                <td><span class="badge bg-warning">Draft</span></td>
+                                                <td>Social Media</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-primary me-1">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-success me-1">
+                                                        <i class="fas fa-check"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-danger">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    
+    <script>
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCharts();
+            updateStats();
+            startRealTimeUpdates();
+        });
+        
+        // Initialize charts
+        function initializeCharts() {
+            // Traffic Chart
+            const trafficCtx = document.getElementById('trafficChart').getContext('2d');
+            new Chart(trafficCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Visitors',
+                        data: [1200, 1400, 1100, 1600, 1800, 2100, 2400, 2200, 2600, 2800, 3100, 3400],
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            
+            // Source Chart
+            const sourceCtx = document.getElementById('sourceChart').getContext('2d');
+            new Chart(sourceCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Organic Search', 'Direct', 'Social Media', 'Referrals', 'Email'],
+                    datasets: [{
+                        data: [45, 25, 15, 10, 5],
+                        backgroundColor: [
+                            '#3b82f6',
+                            '#10b981',
+                            '#f59e0b',
+                            '#ef4444',
+                            '#8b5cf6'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Update stats with animation
+        function updateStats() {
+            animateCounter('totalVisitors', 12458);
+            animateCounter('totalLeads', 1247);
+            // Note: conversion rate is percentage, so handle differently
+            document.getElementById('conversionRate').textContent = '3.24%';
+            animateCounter('blogPosts', 42);
+        }
+        
+        // Animate counter
+        function animateCounter(elementId, target) {
+            const element = document.getElementById(elementId);
+            const duration = 2000;
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 16);
+        }
+        
+        // Real-time updates
+        function startRealTimeUpdates() {
+            setInterval(() => {
+                // Simulate real-time data updates
+                updateNotifications();
+            }, 30000); // Update every 30 seconds
+        }
+        
+        // Update notifications
+        function updateNotifications() {
+            // This would typically fetch from an API
+            console.log('Checking for new notifications...');
+        }
+        
+        // Toggle submenu
+        function toggleSubmenu(submenuId) {
+            const submenu = document.getElementById(submenuId + '-submenu');
+            if (submenu.style.display === 'none') {
+                submenu.style.display = 'block';
+            } else {
+                submenu.style.display = 'none';
+            }
+        }
+        
+        // Export data
+        function exportData() {
+            // Create CSV data
+            const data = [
+                ['Date', 'Visitors', 'Leads', 'Conversion Rate'],
+                ['2025-01-01', '1200', '45', '3.75%'],
+                ['2025-01-02', '1400', '52', '3.71%'],
+                ['2025-01-03', '1100', '38', '3.45%']
+            ];
+            
+            const csvContent = data.map(row => row.join(',')).join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'analytics-export.csv';
+            a.click();
+            
+            URL.revokeObjectURL(url);
+            
+            // Show success message
+            showNotification('Analytics data exported successfully!', 'success');
+        }
+        
+        // Backup website
+        function backupWebsite() {
+            showNotification('Backup process started...', 'info');
+            
+            // Simulate backup process
+            setTimeout(() => {
+                showNotification('Website backup completed successfully!', 'success');
+            }, 3000);
+        }
+        
+        // Logout
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                // Clear session and redirect
+                localStorage.removeItem('admin_token');
+                window.location.href = '../index.html';
+            }
+        }
+        
+        // Show notification
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+            notification.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+        
+        // Check authentication (basic example)
+        function checkAuth() {
+            const token = localStorage.getItem('admin_token');
+            if (!token) {
+                // Redirect to login (for demo, we'll just show an alert)
+                // window.location.href = 'login.html';
+            }
+        }
+        
+        // Initialize auth check
+        checkAuth();
+    </script>
+</body>
+</html>

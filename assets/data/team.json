@@ -1,0 +1,489 @@
+{
+  "team_members": [
+    {
+      "id": 1,
+      "name": "John Smith",
+      "position": "CEO & Founder",
+      "department": "Leadership",
+      "image": "assets/images/team/ceo.webp",
+      "bio": "10+ years in digital marketing with expertise in strategy development and business growth. Former Google and Facebook marketing manager with a proven track record of scaling businesses from startup to industry leaders.",
+      "experience_years": 12,
+      "specializations": [
+        "Google Ads Management",
+        "Facebook Advertising",
+        "Campaign Optimization",
+        "Bid Management",
+        "Landing Page Testing"
+      ],
+      "certifications": [
+        "Google Ads Certified",
+        "Facebook Blueprint Certified",
+        "Microsoft Advertising Certified",
+        "Google Analytics Certified"
+      ],
+      "education": [
+        {
+          "degree": "BS",
+          "field": "Marketing",
+          "institution": "University of Texas",
+          "year": "2019"
+        }
+      ],
+      "achievements": [
+        "Managed $500K+ in monthly ad spend",
+        "Achieved 8x average ROI for clients",
+        "Reduced CPA by 40% across campaigns",
+        "Certified trainer for Google Ads"
+      ],
+      "social_media": {
+        "linkedin": "https://linkedin.com/in/lisathompson-ppc",
+        "email": "lisa@digitalpro.com"
+      },
+      "favorite_tools": ["Google Ads", "Facebook Ads Manager", "Optmyzr", "WordStream"],
+      "languages": ["English"],
+      "featured": false,
+      "join_date": "2020-08-01"
+    },
+    {
+      "id": 7,
+      "name": "James Wilson",
+      "position": "Social Media Strategist",
+      "department": "Social Media",
+      "image": "assets/images/team/team-placeholder.webp",
+      "bio": "Creative social media expert with 5+ years of experience in social strategy, community management, and influencer marketing. Passionate about building engaging brand communities.",
+      "experience_years": 5,
+      "specializations": [
+        "Social Media Strategy",
+        "Community Management",
+        "Influencer Marketing",
+        "Social Media Advertising",
+        "Content Creation"
+      ],
+      "certifications": [
+        "Facebook Blueprint Certified",
+        "Hootsuite Social Media Certified",
+        "LinkedIn Marketing Certified",
+        "Twitter Flight School"
+      ],
+      "education": [
+        {
+          "degree": "BA",
+          "field": "Communications",
+          "institution": "Arizona State University",
+          "year": "2018"
+        }
+      ],
+      "achievements": [
+        "Grew social accounts to 2M+ followers",
+        "Created viral content with 50M+ impressions",
+        "Managed influencer campaigns with $1M+ reach",
+        "Increased social engagement by 500% average"
+      ],
+      "social_media": {
+        "linkedin": "https://linkedin.com/in/jameswilson-social",
+        "instagram": "https://instagram.com/james_socialmedia",
+        "email": "james@digitalpro.com"
+      },
+      "favorite_tools": ["Hootsuite", "Later", "Canva", "Sprout Social"],
+      "languages": ["English", "Italian"],
+      "featured": false,
+      "join_date": "2019-11-01"
+    },
+    {
+      "id": 8,
+      "name": "Rachel Green",
+      "position": "Data Analyst",
+      "department": "Analytics",
+      "image": "assets/images/team/team-placeholder.webp",
+      "bio": "Data-driven marketing analyst with 4+ years of experience in marketing analytics, reporting, and business intelligence. Expert in turning data into actionable insights.",
+      "experience_years": 4,
+      "specializations": [
+        "Marketing Analytics",
+        "Data Visualization",
+        "Reporting & Dashboards",
+        "Conversion Analysis",
+        "Business Intelligence"
+      ],
+      "certifications": [
+        "Google Analytics Certified",
+        "Google Tag Manager Certified",
+        "Tableau Desktop Certified",
+        "Microsoft Power BI Certified"
+      ],
+      "education": [
+        {
+          "degree": "MS",
+          "field": "Data Science",
+          "institution": "Georgia Tech",
+          "year": "2019"
+        },
+        {
+          "degree": "BS",
+          "field": "Statistics",
+          "institution": "University of Georgia",
+          "year": "2017"
+        }
+      ],
+      "achievements": [
+        "Built 100+ automated reporting dashboards",
+        "Identified insights leading to $2M+ revenue",
+        "Improved campaign performance by 35% average",
+        "Trained 50+ clients on analytics tools"
+      ],
+      "social_media": {
+        "linkedin": "https://linkedin.com/in/rachelgreen-analytics",
+        "email": "rachel@digitalpro.com"
+      },
+      "favorite_tools": ["Google Analytics", "Tableau", "Power BI", "Google Data Studio"],
+      "languages": ["English", "Mandarin"],
+      "featured": false,
+      "join_date": "2020-01-15"
+    }
+  ],
+  "departments": {
+    "leadership": {
+      "name": "Leadership",
+      "head": "John Smith",
+      "members": 1,
+      "description": "Strategic vision and company direction"
+    },
+    "technology": {
+      "name": "Technology",
+      "head": "Sarah Johnson",
+      "members": 1,
+      "description": "Technical development and infrastructure"
+    },
+    "marketing": {
+      "name": "Marketing",
+      "head": "Mike Davis",
+      "members": 1,
+      "description": "Campaign strategy and execution"
+    },
+    "content": {
+      "name": "Content",
+      "head": "Emily Rodriguez",
+      "members": 1,
+      "description": "Content creation and strategy"
+    },
+    "seo": {
+      "name": "SEO",
+      "head": "David Kim",
+      "members": 1,
+      "description": "Search engine optimization"
+    },
+    "ppc": {
+      "name": "PPC",
+      "head": "Lisa Thompson",
+      "members": 1,
+      "description": "Paid advertising campaigns"
+    },
+    "social_media": {
+      "name": "Social Media",
+      "head": "James Wilson",
+      "members": 1,
+      "description": "Social media marketing and management"
+    },
+    "analytics": {
+      "name": "Analytics",
+      "head": "Rachel Green",
+      "members": 1,
+      "description": "Data analysis and reporting"
+    }
+  },
+  "company_stats": {
+    "total_employees": 25,
+    "featured_members": 3,
+    "average_experience": 6.5,
+    "total_certifications": 45,
+    "diversity": {
+      "gender": {
+        "male": 60,
+        "female": 40
+      },
+      "experience_levels": {
+        "junior": 20,
+        "mid": 50,
+        "senior": 30
+      }
+    },
+    "company_culture": {
+      "values": [
+        "Innovation",
+        "Collaboration",
+        "Results-Driven",
+        "Continuous Learning",
+        "Client Success"
+      ],
+      "benefits": [
+        "Health Insurance",
+        "Remote Work Options",
+        "Professional Development Budget",
+        "Flexible Hours",
+        "Performance Bonuses"
+      ]
+    }
+  }
+}
+        "Digital Marketing Strategy",
+        "SEO",
+        "Business Growth",
+        "Team Leadership",
+        "Client Relations"
+      ],
+      "certifications": [
+        "Google Ads Certified",
+        "Google Analytics Certified",
+        "Facebook Blueprint Certified",
+        "HubSpot Inbound Marketing",
+        "Bing Ads Accredited"
+      ],
+      "education": [
+        {
+          "degree": "MBA",
+          "field": "Marketing & Business Administration",
+          "institution": "Stanford University",
+          "year": "2012"
+        },
+        {
+          "degree": "BS",
+          "field": "Computer Science",
+          "institution": "UC Berkeley",
+          "year": "2008"
+        }
+      ],
+      "achievements": [
+        "Grew 50+ businesses by 300%+ in organic traffic",
+        "Generated $10M+ in client revenue",
+        "Featured speaker at 25+ marketing conferences",
+        "Published author on digital marketing strategies"
+      ],
+      "social_media": {
+        "linkedin": "https://linkedin.com/in/johnsmith-digitalpro",
+        "twitter": "https://twitter.com/johnsmith_seo",
+        "email": "john@digitalpro.com"
+      },
+      "favorite_tools": ["Google Analytics", "Ahrefs", "SEMrush", "HubSpot"],
+      "languages": ["English", "Spanish"],
+      "featured": true,
+      "join_date": "2015-01-01"
+    },
+    {
+      "id": 2,
+      "name": "Sarah Johnson",
+      "position": "CTO & Lead Developer",
+      "department": "Technology",
+      "image": "assets/images/team/cto.webp",
+      "bio": "Full-stack developer with 8+ years of experience in web development, SEO optimization, and performance enhancement. Expert in creating high-converting websites and technical SEO implementations.",
+      "experience_years": 9,
+      "specializations": [
+        "Technical SEO",
+        "Web Development",
+        "Performance Optimization",
+        "Data Analytics",
+        "Automation"
+      ],
+      "certifications": [
+        "AWS Certified Solutions Architect",
+        "Google Analytics Certified",
+        "Google Search Console Expert",
+        "Shopify Partner",
+        "React Developer Certified"
+      ],
+      "education": [
+        {
+          "degree": "MS",
+          "field": "Computer Science",
+          "institution": "MIT",
+          "year": "2014"
+        },
+        {
+          "degree": "BS",
+          "field": "Software Engineering",
+          "institution": "Carnegie Mellon",
+          "year": "2012"
+        }
+      ],
+      "achievements": [
+        "Built 100+ high-performance websites",
+        "Improved site speeds by average 70%",
+        "Developed proprietary SEO tools",
+        "Led technical SEO for Fortune 500 companies"
+      ],
+      "social_media": {
+        "linkedin": "https://linkedin.com/in/sarahjohnson-tech",
+        "github": "https://github.com/sarahjohnson",
+        "email": "sarah@digitalpro.com"
+      },
+      "favorite_tools": ["React", "Node.js", "Google Search Console", "Screaming Frog"],
+      "languages": ["English", "French", "JavaScript", "Python"],
+      "featured": true,
+      "join_date": "2016-03-15"
+    },
+    {
+      "id": 3,
+      "name": "Mike Davis",
+      "position": "Marketing Director",
+      "department": "Marketing",
+      "image": "assets/images/team/marketing-head.webp",
+      "bio": "Digital marketing strategist specializing in PPC campaigns, social media marketing, and conversion optimization with 7+ years experience. Expert in creating data-driven campaigns that deliver exceptional ROI.",
+      "experience_years": 8,
+      "specializations": [
+        "PPC Management",
+        "Social Media Marketing",
+        "Conversion Optimization",
+        "Content Strategy",
+        "Marketing Automation"
+      ],
+      "certifications": [
+        "Google Ads Certified",
+        "Facebook Blueprint Certified",
+        "HubSpot Marketing Certified",
+        "Bing Ads Accredited",
+        "LinkedIn Marketing Certified"
+      ],
+      "education": [
+        {
+          "degree": "MBA",
+          "field": "Digital Marketing",
+          "institution": "Wharton School",
+          "year": "2016"
+        },
+        {
+          "degree": "BA",
+          "field": "Communications",
+          "institution": "UCLA",
+          "year": "2013"
+        }
+      ],
+      "achievements": [
+        "Managed $2M+ in ad spend annually",
+        "Achieved average 6x ROI across campaigns",
+        "Grew social media accounts to 1M+ followers",
+        "Created viral content with 10M+ views"
+      ],
+      "social_media": {
+        "linkedin": "https://linkedin.com/in/mikedavis-marketing",
+        "twitter": "https://twitter.com/mikedavis_ppc",
+        "email": "mike@digitalpro.com"
+      },
+      "favorite_tools": ["Google Ads", "Facebook Ads Manager", "Hootsuite", "Canva"],
+      "languages": ["English", "German"],
+      "featured": true,
+      "join_date": "2017-06-01"
+    },
+    {
+      "id": 4,
+      "name": "Emily Rodriguez",
+      "position": "Content Marketing Manager",
+      "department": "Content",
+      "image": "assets/images/team/team-placeholder.webp",
+      "bio": "Creative content strategist with 6+ years of experience in content marketing, copywriting, and brand storytelling. Expert in creating engaging content that drives traffic and conversions.",
+      "experience_years": 6,
+      "specializations": [
+        "Content Strategy",
+        "Copywriting",
+        "Brand Storytelling",
+        "Blog Management",
+        "Video Marketing"
+      ],
+      "certifications": [
+        "HubSpot Content Marketing",
+        "Google Analytics Certified",
+        "Copyhackers Certified",
+        "Content Marketing Institute"
+      ],
+      "education": [
+        {
+          "degree": "MA",
+          "field": "Creative Writing",
+          "institution": "Columbia University",
+          "year": "2017"
+        },
+        {
+          "degree": "BA",
+          "field": "English Literature",
+          "institution": "NYU",
+          "year": "2015"
+        }
+      ],
+      "achievements": [
+        "Created content viewed 5M+ times",
+        "Increased blog traffic by 400% average",
+        "Won 3 content marketing awards",
+        "Published in 50+ industry publications"
+      ],
+      "social_media": {
+        "linkedin": "https://linkedin.com/in/emilyrodriguez-content",
+        "twitter": "https://twitter.com/emily_content",
+        "email": "emily@digitalpro.com"
+      },
+      "favorite_tools": ["WordPress", "Grammarly", "BuzzSumo", "Canva"],
+      "languages": ["English", "Spanish", "Portuguese"],
+      "featured": false,
+      "join_date": "2018-09-01"
+    },
+    {
+      "id": 5,
+      "name": "David Kim",
+      "position": "Senior SEO Specialist",
+      "department": "SEO",
+      "image": "assets/images/team/team-placeholder.webp",
+      "bio": "Technical SEO expert with 5+ years of experience in on-page optimization, link building, and local SEO. Specializes in helping businesses achieve first-page Google rankings.",
+      "experience_years": 5,
+      "specializations": [
+        "Technical SEO",
+        "Local SEO",
+        "Link Building",
+        "Keyword Research",
+        "SEO Auditing"
+      ],
+      "certifications": [
+        "Google SEO Certified",
+        "Moz SEO Certified",
+        "SEMrush Certified",
+        "Yoast SEO Academy"
+      ],
+      "education": [
+        {
+          "degree": "MS",
+          "field": "Digital Marketing",
+          "institution": "Northwestern University",
+          "year": "2018"
+        },
+        {
+          "degree": "BS",
+          "field": "Marketing",
+          "institution": "University of Illinois",
+          "year": "2016"
+        }
+      ],
+      "achievements": [
+        "Improved rankings for 200+ websites",
+        "Achieved #1 rankings for 500+ keywords",
+        "Increased organic traffic by 250% average",
+        "Built high-quality backlinks from DA90+ sites"
+      ],
+      "social_media": {
+        "linkedin": "https://linkedin.com/in/davidkim-seo",
+        "email": "david@digitalpro.com"
+      },
+      "favorite_tools": ["Ahrefs", "SEMrush", "Screaming Frog", "Google Search Console"],
+      "languages": ["English", "Korean"],
+      "featured": false,
+      "join_date": "2019-02-15"
+    },
+    {
+      "id": 6,
+      "name": "Lisa Thompson",
+      "position": "PPC Campaign Manager",
+      "department": "PPC",
+      "image": "assets/images/team/team-placeholder.webp",
+      "bio": "PPC advertising specialist with 4+ years of experience managing Google Ads, Facebook Ads, and other paid campaigns. Expert in maximizing ROI and minimizing cost per acquisition.",
+      "experience_years": 4,
+      "specializations": [  
+        "Google Ads Management",
+        "Facebook Advertising",
+        "Campaign Optimization",
+        "Bid Management",
+        "Landing Page Testing"
+      ]

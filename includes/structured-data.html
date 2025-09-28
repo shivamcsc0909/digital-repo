@@ -1,0 +1,724 @@
+<!-- ===== ORGANIZATION SCHEMA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "DigitalPro Agency",
+  "alternateName": "DigitalPro",
+  "description": "Leading digital marketing agency providing SEO, PPC, social media marketing, and web development services to help businesses grow online.",
+  "url": "https://yourwebsite.com",
+  "logo": "https://yourwebsite.com/assets/images/logo/logo.png",
+  "image": "https://yourwebsite.com/assets/images/about/company-hero.jpg",
+  "foundingDate": "2015-01-01",
+  "founder": {
+    "@type": "Person",
+    "name": "John Smith",
+    "jobTitle": "CEO & Founder"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Business Street",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10001",
+    "addressCountry": "US"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-555-123-4567",
+      "contactType": "customer service",
+      "availableLanguage": ["English"],
+      "areaServed": ["US", "CA"],
+      "contactOption": "TollFree"
+    },
+    {
+      "@type": "ContactPoint",
+      "email": "info@digitalpro.com",
+      "contactType": "customer service"
+    },
+    {
+      "@type": "ContactPoint",
+      "email": "sales@digitalpro.com",
+      "contactType": "sales"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/digitalproagency",
+    "https://www.twitter.com/digitalproagency",
+    "https://www.linkedin.com/company/digitalpro-agency",
+    "https://www.instagram.com/digitalproagency",
+    "https://www.youtube.com/c/digitalproagency"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "127",
+    "reviewCount": "89"
+  },
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "value": "25"
+  },
+  "knowsAbout": [
+    "Search Engine Optimization",
+    "Pay-Per-Click Advertising",
+    "Social Media Marketing",
+    "Web Development",
+    "Content Marketing",
+    "Email Marketing",
+    "Digital Strategy",
+    "Conversion Optimization"
+  ],
+  "slogan": "Boost Your Business with Expert Digital Marketing",
+  "award": [
+    "Best Digital Marketing Agency 2023",
+    "Top SEO Company 2022",
+    "Excellence in Digital Innovation 2021"
+  ]
+}
+</script>
+
+<!-- ===== LOCAL BUSINESS SCHEMA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "DigitalPro Agency",
+  "image": "https://yourwebsite.com/assets/images/office/office-exterior.jpg",
+  "telephone": "+1-555-123-4567",
+  "email": "info@digitalpro.com",
+  "url": "https://yourwebsite.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Business Street",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10001",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.7128",
+    "longitude": "-74.0060"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "priceRange": "$$",
+  "currenciesAccepted": "USD",
+  "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice"],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "40.7128",
+      "longitude": "-74.0060"
+    },
+    "geoRadius": "50000"
+  },
+  "areaServed": ["New York", "New Jersey", "Connecticut", "United States"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Digital Marketing Services",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "SEO Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO Optimization",
+              "description": "Comprehensive SEO services to improve search engine rankings"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog", 
+        "name": "PPC Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Google Ads Management",
+              "description": "Professional Google Ads campaign management and optimization"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+</script>
+
+<!-- ===== WEBSITE SCHEMA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "DigitalPro Agency",
+  "alternateName": "DigitalPro",
+  "url": "https://yourwebsite.com",
+  "description": "Professional digital marketing services including SEO, PPC, social media marketing, and web development.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "DigitalPro Agency",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yourwebsite.com/assets/images/logo/logo.png"
+    }
+  },
+  "potentialAction": [
+    {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://yourwebsite.com/blog?search={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    {
+      "@type": "ContactAction",
+      "target": "https://yourwebsite.com/contact"
+    }
+  ],
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "DigitalPro Agency"
+  }
+}
+</script>
+
+<!-- ===== BREADCRUMB SCHEMA (Dynamic - to be updated per page) ===== -->
+<script type="application/ld+json" id="breadcrumb-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://yourwebsite.com"
+    }
+  ]
+}
+</script>
+
+<!-- ===== SERVICE SCHEMAS ===== -->
+<!-- SEO Service Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "SEO Services",
+  "description": "Professional search engine optimization services to improve website rankings and organic traffic.",
+  "provider": {
+    "@type": "Organization",
+    "name": "DigitalPro Agency"
+  },
+  "areaServed": "United States",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "SEO Service Plans",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Basic SEO Package",
+        "description": "Essential SEO services for small businesses",
+        "price": "499",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "499",
+          "priceCurrency": "USD",
+          "unitText": "MONTH"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Professional SEO Package", 
+        "description": "Comprehensive SEO services for growing businesses",
+        "price": "999",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "999",
+          "priceCurrency": "USD",
+          "unitText": "MONTH"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Enterprise SEO Package",
+        "description": "Advanced SEO services for large enterprises",
+        "price": "1999",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "1999",
+          "priceCurrency": "USD", 
+          "unitText": "MONTH"
+        }
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "45"
+  }
+}
+</script>
+
+<!-- PPC Service Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "PPC Management Services",
+  "description": "Expert Google Ads and paid advertising campaign management to maximize ROI.",
+  "provider": {
+    "@type": "Organization",
+    "name": "DigitalPro Agency"
+  },
+  "areaServed": "United States",
+  "offers": {
+    "@type": "Offer",
+    "name": "PPC Management",
+    "description": "Professional PPC campaign management and optimization",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "minPrice": "500",
+      "priceCurrency": "USD",
+      "unitText": "MONTH"
+    }
+  }
+}
+</script>
+
+<!-- ===== FAQ SCHEMA (for FAQ sections) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take to see SEO results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEO is a long-term strategy. Typically, you can start seeing improvements in 3-6 months, with significant results in 6-12 months. However, this varies based on competition, current website status, and industry."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's included in your PPC management fee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our PPC management includes campaign setup, keyword research, ad creation, landing page optimization, bid management, A/B testing, conversion tracking, and monthly reporting. Ad spend is separate from our management fee."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide content for social media?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We create all content including graphics, videos, captions, and hashtags. Our team develops a content calendar aligned with your brand voice and marketing objectives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a custom website cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Website costs vary based on complexity, features, and design requirements. Basic websites start at $2,999, while complex e-commerce sites can range from $10,000-$50,000+. We provide detailed quotes after understanding your needs."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ===== REVIEW SCHEMA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Organization",
+    "name": "DigitalPro Agency"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Sarah Mitchell"
+  },
+  "reviewBody": "DigitalPro transformed our online presence completely. Our website traffic increased by 400% and leads by 250% in just 6 months! Their team is professional, knowledgeable, and delivers results."
+}
+</script>
+
+<!-- ===== BLOG/ARTICLE SCHEMA (for blog posts) ===== -->
+<script type="application/ld+json" id="article-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ARTICLE_TITLE}}",
+  "description": "{{ARTICLE_DESCRIPTION}}",
+  "image": "{{ARTICLE_IMAGE}}",
+  "author": {
+    "@type": "Person",
+    "name": "{{AUTHOR_NAME}}",
+    "jobTitle": "{{AUTHOR_TITLE}}",
+    "image": "{{AUTHOR_IMAGE}}",
+    "sameAs": ["{{AUTHOR_SOCIAL}}"]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DigitalPro Agency",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yourwebsite.com/assets/images/logo/logo.png",
+      "width": 200,
+      "height": 60
+    }
+  },
+  "datePublished": "{{PUBLISH_DATE}}",
+  "dateModified": "{{MODIFIED_DATE}}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ARTICLE_URL}}"
+  },
+  "articleSection": "{{CATEGORY}}",
+  "keywords": "{{KEYWORDS}}",
+  "wordCount": "{{WORD_COUNT}}",
+  "timeRequired": "PT{{READ_time}}M",
+  "inLanguage": "en-US"
+}
+</script>
+
+<!-- ===== VIDEO SCHEMA (for video content) ===== -->
+<script type="application/ld+json" id="video-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "{{VIDEO_TITLE}}",
+  "description": "{{VIDEO_DESCRIPTION}}",
+  "thumbnailUrl": "{{VIDEO_THUMBNAIL}}",
+  "uploadDate": "{{UPLOAD_DATE}}",
+  "duration": "{{VIDEO_DURATION}}",
+  "contentUrl": "{{VIDEO_URL}}",
+  "embedUrl": "{{EMBED_URL}}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "DigitalPro Agency",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yourwebsite.com/assets/images/logo/logo.png"
+    }
+  }
+}
+</script>
+
+<!-- ===== HOW-TO SCHEMA (for tutorial content) ===== -->
+<script type="application/ld+json" id="howto-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "{{HOWTO_TITLE}}",
+  "description": "{{HOWTO_DESCRIPTION}}",
+  "image": "{{HOWTO_IMAGE}}",
+  "totalTime": "{{TOTAL_TIME}}",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "{{ESTIMATED_COST}}"
+  },
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "{{SUPPLY_NAME}}"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "{{TOOL_NAME}}"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "{{STEP_NAME}}",
+      "text": "{{STEP_DESCRIPTION}}",
+      "image": "{{STEP_IMAGE}}",
+      "url": "{{STEP_URL}}"
+    }
+  ]
+}
+</script>
+
+<!-- ===== COURSE SCHEMA (for educational content) ===== -->
+<script type="application/ld+json" id="course-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "{{COURSE_TITLE}}",
+  "description": "{{COURSE_DESCRIPTION}}",
+  "provider": {
+    "@type": "Organization",
+    "name": "DigitalPro Agency"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "instructor": {
+      "@type": "Person",
+      "name": "{{INSTRUCTOR_NAME}}"
+    }
+  }
+}
+</script>
+
+<!-- ===== EVENT SCHEMA (for webinars/events) ===== -->
+<script type="application/ld+json" id="event-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "{{EVENT_NAME}}",
+  "description": "{{EVENT_DESCRIPTION}}",
+  "startDate": "{{EVENT_START_DATE}}",
+  "endDate": "{{EVENT_END_DATE}}",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+  "location": {
+    "@type": "VirtualLocation",
+    "url": "{{EVENT_URL}}"
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "DigitalPro Agency",
+    "url": "https://yourwebsite.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "{{EVENT_PRICE}}",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "{{REGISTRATION_URL}}"
+  }
+}
+</script>
+
+<!-- ===== JAVASCRIPT TO DYNAMICALLY UPDATE SCHEMAS ===== -->
+<script>
+// Function to update breadcrumb schema
+function updateBreadcrumbSchema(breadcrumbs) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": crumb.name,
+      "item": crumb.url
+    }))
+  };
+  
+  const scriptElement = document.getElementById('breadcrumb-schema');
+  if (scriptElement) {
+    scriptElement.textContent = JSON.stringify(schema, null, 2);
+  }
+}
+
+// Function to update article schema for blog posts
+function updateArticleSchema(articleData) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": articleData.title,
+    "description": articleData.description,
+    "image": articleData.image,
+    "author": {
+      "@type": "Person",
+      "name": articleData.author.name,
+      "jobTitle": articleData.author.title,
+      "image": articleData.author.image
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DigitalPro Agency",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://yourwebsite.com/assets/images/logo/logo.png"
+      }
+    },
+    "datePublished": articleData.publishDate,
+    "dateModified": articleData.modifiedDate,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": articleData.url
+    },
+    "articleSection": articleData.category,
+    "keywords": articleData.keywords,
+    "wordCount": articleData.wordCount,
+    "timeRequired": `PT${articleData.readTime}M`
+  };
+  
+  const scriptElement = document.getElementById('article-schema');
+  if (scriptElement) {
+    scriptElement.textContent = JSON.stringify(schema, null, 2);
+  }
+}
+
+// Function to add review schema
+function addReviewSchema(reviewData) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Organization",
+      "name": "DigitalPro Agency"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": reviewData.rating,
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": reviewData.author
+    },
+    "reviewBody": reviewData.body,
+    "datePublished": reviewData.date
+  };
+  
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(schema, null, 2);
+  document.head.appendChild(script);
+}
+
+// Auto-detect page type and update schemas accordingly
+document.addEventListener('DOMContentLoaded', function() {
+  // Update breadcrumbs based on current page
+  const currentPath = window.location.pathname;
+  const breadcrumbs = [{ name: 'Home', url: 'https://yourwebsite.com' }];
+  
+  if (currentPath.includes('/services')) {
+    breadcrumbs.push({ name: 'Services', url: 'https://yourwebsite.com/services' });
+  } else if (currentPath.includes('/about')) {
+    breadcrumbs.push({ name: 'About', url: 'https://yourwebsite.com/about' });
+  } else if (currentPath.includes('/blog')) {
+    breadcrumbs.push({ name: 'Blog', url: 'https://yourwebsite.com/blog' });
+  } else if (currentPath.includes('/contact')) {
+    breadcrumbs.push({ name: 'Contact', url: 'https://yourwebsite.com/contact' });
+  }
+  
+  updateBreadcrumbSchema(breadcrumbs);
+});
+</script>
+
+<!-- ===== USAGE INSTRUCTIONS ===== -->
+<!--
+SCHEMA IMPLEMENTATION GUIDE:
+
+1. Organization Schema: ✅ Already configured
+   - Update contact information, address, and social media links
+   - Add actual awards and certifications
+
+2. Local Business Schema: ✅ Already configured  
+   - Update opening hours, service area, and pricing
+   - Add actual business photos
+
+3. Service Schemas: ✅ Already configured
+   - Update pricing and service descriptions
+   - Add more service offerings as needed
+
+4. Dynamic Schemas (update per page):
+   - Article Schema: For blog posts
+   - Video Schema: For video content  
+   - FAQ Schema: For FAQ sections
+   - Event Schema: For webinars/events
+   - Course Schema: For educational content
+   - HowTo Schema: For tutorial content
+
+5. Page-Specific Implementation:
+
+   Homepage:
+   - Organization + Website + Local Business schemas ✅
+
+   Services Page:
+   - Service schemas for each offering ✅
+   - FAQ schema for service questions ✅
+
+   About Page:
+   - Organization + Local Business schemas ✅
+
+   Blog Page:
+   - Article schema for each post
+   - Update dynamically with JavaScript
+
+   Contact Page:
+   - Local Business + ContactPoint schemas ✅
+
+6. Testing:
+   - Use Google's Rich Results Test
+   - Check Schema.org validator
+   - Monitor Google Search Console for rich results
+
+7. Variables to Replace:
+   - {{ARTICLE_TITLE}}: Blog post title
+   - {{ARTICLE_DESCRIPTION}}: Blog post description  
+   - {{AUTHOR_NAME}}: Author name
+   - {{PUBLISH_DATE}}: Publication date (ISO format)
+   - {{CATEGORY}}: Content category
+   - {{KEYWORDS}}: Content keywords
+   - All other {{VARIABLE}} placeholders
+
+Example JavaScript Usage:
+
+// Update article schema for blog post
+updateArticleSchema({
+  title: "How to Rank on Google in 2025",
+  description: "Complete SEO guide...",
+  image: "https://yourwebsite.com/blog-image.jpg",
+  author: {
+    name: "John Smith",
+    title: "SEO Expert",
+    image: "https://yourwebsite.com/john.jpg"
+  },
+  publishDate: "2025-01-15T10:00:00",
+  modifiedDate: "2025-01-15T10:00:00",
+  url: "https://yourwebsite.com/blog/seo-guide",
+  category: "SEO",
+  keywords: "SEO, Google, Ranking",
+  wordCount: 2500,
+  readTime: 8
+});
+
+// Add customer review
+addReviewSchema({
+  rating: "5",
+  author: "Sarah Mitchell",
+  body: "Excellent service and results!",
+  date: "2025-01-15"
+});
+
+-->
